@@ -19,6 +19,15 @@ export default {
     ]
   },
 
+  styleResources: {
+    scss: [
+      '@/assets/css/buttons.scss',
+      '@/assets/css/variables.scss',
+      '@/assets/css/public.scss'
+    ],
+    hoistUseStatements: true
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],

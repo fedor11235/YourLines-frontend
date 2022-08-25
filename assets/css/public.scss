@@ -1,0 +1,100 @@
+@import 'mixins';
+
+// @include font('Inter', 'Inter-Regular', 400);
+// @include font('Inter', 'Inter-SemiBold', 600);
+// @include font('Inter', 'Inter-ExtraBold', 800);
+
+body {
+  margin: 0;
+  padding: 0;
+  background: red;
+  font-size: 16px !important;
+  font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', 'Fira Sans', Roboto,
+    Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif !important;
+  font-weight: 400 !important;
+  color: $black !important;
+  background-color: $light-gray;
+  line-height: 24px !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li {
+    &:not(:last-of-type) {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  &.link-inline {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+hr {
+  background: rgba(0,0,0,.08);
+  height: 1px;
+  width: 100%;
+  margin: 0;
+  border: none;
+  @include max(768) {
+    display: none;
+  }
+}
+
+.has-pseudo-scroll {
+  max-width: calc(100vw - 9px);
+  &:after {
+    content: '';
+    display: block;
+    background: rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 9px;
+  }
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+// .text-link {
+//   cursor: pointer;
+//   text-decoration: underline;
+//   text-decoration-color: rgba(26, 26, 26, 0.12);
+//   text-underline-offset: 4px;
+//   transition: all 200ms ease;
+//   &:hover {
+//     text-decoration-color: rgba(0, 0, 0, 0.55);
+//   }
+//   &:focus {
+//     text-decoration-color: rgba(0, 0, 0, 0.55);
+//   }
+//   &:active {
+//     text-decoration-color: rgb(26, 26, 26);
+//   }
+// }

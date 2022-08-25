@@ -1,0 +1,68 @@
+/**
+ * Fonts
+ */
+
+@mixin font($alias, $name, $thickness: 400, $style: normal) {
+  @font-face {
+    font-family: $alias;
+    src:
+      url("../fonts/" + $name + ".woff2") format("woff2"),
+      url("../fonts/" + $name + ".woff") format("woff");
+    font-weight: $thickness;
+    font-style: $style;
+  }
+}
+
+@mixin max($size) {
+  @media (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin min($size) {
+  @media (min-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin minmax($size1, $size2) {
+  @media (min-width: #{$size1}px) and (max-width: #{$size2}px) {
+    @content;
+  }
+}
+
+@mixin list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin big-loading($color: #aaa, $width: 2px, $size: 3rem) {
+  &:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: $size;
+    height: $size;
+    border: $width solid transparentize($color, 0.8);
+    border-radius: 50%;
+    border-top-color: transparentize($color, 0.2);
+    animation: spin 1s linear infinite;
+  }
+}

@@ -1,0 +1,117 @@
+@import 'variables';
+
+.button {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: all 200ms ease;
+  &.button-disable {
+    background-color: white;
+  }
+  &:focus,
+  &:active {
+    transform: scale(0.975);
+  }
+  &:disabled {
+    pointer-events: none;
+    filter: opacity(55%);
+  }
+  &.button-blue {
+    background-color: $blue;
+    color: white;
+    &:hover {
+      background-color: #335cd7;
+    }
+    &:active {
+      background-color: #254bbb;
+    }
+  }
+  &.button-white {
+    background-color: white;
+    color: $black;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    &:hover {
+      background-color: #F7F7F7;
+    }
+    &:active,
+    &:focus {
+      background-color: #EBEBEB;
+    }
+  }
+  &.button-red {
+    background: #EF4E4E;
+    color: white !important;
+    &:hover,
+    &:focus {
+      background: #E12D39;
+    }
+    &:active {
+      background: #CF1124;
+    }
+  }
+
+  &.button-danger {
+    background: white;
+    border: 1px solid rgba(239, 78, 78, 0.15);
+    color: #EF4E4E;
+    &.show-loader {
+      ::v-deep .loader:after {
+        border-color: rgba(239, 78, 78, 0.15) transparent transparent transparent;
+      }
+    }
+  }
+
+  &.button-grey {
+    background: #e1e1e1;
+    color: #6d6d6d !important;
+  }
+  &.outlined {
+    background-color: white;
+    border: 1px solid #ebebeb;
+    color: rgba(0, 0, 0, 0.9);
+    &:hover {
+      background-color: #f7f7f7;
+    }
+    &:active {
+      background-color: #ebebeb;
+    }
+    &.blue {
+      border: 1px solid rgba(73, 109, 219, 0.2);
+      color: $blue;
+    }
+  }
+  &.small {
+    height: 32px;
+    line-height: 30px;
+    padding: 0 16px;
+  }
+  &.pre-small {
+    height: 32px;
+    line-height: 30px;
+    padding: 0 12px;
+  }
+  &.tiny {
+    height: 24px;
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &:active {
+    transform: scale(0.975);
+  }
+  &.has-icon {
+    padding-left: 12px;
+    padding-right: 16px;
+  }
+}
+
+button {
+  border: none;
+}
