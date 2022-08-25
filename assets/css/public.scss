@@ -1,13 +1,8 @@
 @import 'mixins';
 
-// @include font('Inter', 'Inter-Regular', 400);
-// @include font('Inter', 'Inter-SemiBold', 600);
-// @include font('Inter', 'Inter-ExtraBold', 800);
-
 body {
   margin: 0;
   padding: 0;
-  background: red;
   font-size: 16px !important;
   font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', 'Fira Sans', Roboto,
     Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif !important;

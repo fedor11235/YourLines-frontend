@@ -14,7 +14,7 @@ export default {
 .login {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100vh 100vh;
+  grid-template-rows: 100vh;
 }
 
 </style>
