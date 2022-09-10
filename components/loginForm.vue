@@ -7,6 +7,8 @@
       .form-group
         input.form-control(type='password', name='{:password}' placeholder='Password')
       button.button.button-blue(type='submit') Log-in
+      button.button.outlined(type='submit') Login with google
+      button.button.outlined(type='submit') Login with twitter
 </template>
 
 <script>
@@ -43,6 +45,9 @@ export default {
         }
       }
     }
+  }
+  button {
+    margin-bottom: 8px;
   }
 }
 
