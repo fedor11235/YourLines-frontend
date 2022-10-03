@@ -1,18 +1,22 @@
 <template lang="pug">
-.main pipa!
+.main
+  user-toolbar
+  user-feed
+  user-news
 </template>
 
 <script>
 export default {
-  layout: 'standartPage'
+  // layout: 'standartPage'
 }
 </script>
 
 <style lang="scss" scoped>
-.login {
-  height: calc(100% - 242px);
+.main {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-color: transparent;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
 }
 
