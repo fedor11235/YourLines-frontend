@@ -5,9 +5,6 @@
 </template>
 <script>
 export default {
-  // mounted() {
-  //   console.log(process.env.dev, 'BASE_URL')
-  // }
 }
 </script>
 <style lang="scss" scoped>

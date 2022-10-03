@@ -1,7 +1,6 @@
 import path from 'path'
 import fs from 'fs'
 const env = require('./env')
-console.log(env)
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -39,6 +38,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/api',
+    '~plugins/services',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,8 +51,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  // modules: [
+  //   [
+  //     '@nuxtjs/axios',
+  //     {
+  //       baseURL: env.baseURL,
+  //       credentials: true
+  //     }
+  //   ]
+  // ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

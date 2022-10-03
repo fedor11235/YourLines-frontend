@@ -1,14 +1,16 @@
 export default api => ({
-    loginUser(payload) {
+    userLogin(payload) {
+      const { login, password } = payload
       let formData = new FormData()
-      formData.append('login', payload.login)
-      formData.append('password', payload.password)
+      formData.append('login', login)
+      formData.append('password', password)
       return api.$post('/auth/login', formData)
     },
-    registryUser(payload) {
+    userRegistry(payload) {
+      const { login, password } = payload
       let formData = new FormData()
-      formData.append('login', payload.login)
-      formData.append('password', payload.password)
+      formData.append('login', login)
+      formData.append('password', password)
       return api.$post('/auth/registry', formData)
     }
   })

@@ -2,21 +2,23 @@ export default ctx => ({
   async userLogin(payload) {
     let response
     try {
-      response = ctx.$authApi.loginUser(payload)
+      response = ctx.$authApi.userLogin(payload)
       window.localStorage.setItem('login', response.user)
       return response.login
     } catch (e) {
-      console.log('user info unavailable', e)
+      console.error('user info unavailable', e)
     }
   },
   async userRegistry(payload) {
     let response
     try {
-      response = ctx.$authApi.registryUser(payload)
+      console.log(ctx)
+      response = ctx.$aythApi.userRegistry(payload)
+      console.log(response, 'Sresponse')
       window.localStorage.setItem('login', response.user)
-      return response.login
+      return response.registry
     } catch (e) {
-      console.log('user info unavailable', e)
+      console.error('user info unavailable', e)
     }
   },
   async userLogout() {
