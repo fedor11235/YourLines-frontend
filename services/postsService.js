@@ -1,8 +1,8 @@
 export default ctx => ({
-    async userLogin() {
+    async postsGetAll() {
       let response
       try {
-        response = ctx.$postsApi.postsGetAll()
+        response = await ctx.$postsApi.postsGetAll()
         window.localStorage.setItem('posts', response)
         return response
       } catch (e) {
@@ -12,7 +12,7 @@ export default ctx => ({
     async postAdd(payload) {
         let response
         try {
-          ctx.$postsApi.postAdd(payload)
+          await ctx.$postsApi.postAdd(payload)
           // TODO add store
           // window.localStorage.setItem('posts', response)
           return response
@@ -23,7 +23,7 @@ export default ctx => ({
     async postEdit(payload) {
         let response
         try {
-          ctx.$postsApi.postEdit(payload)
+          await ctx.$postsApi.postEdit(payload)
           //TODO add store
           //window.localStorage.setItem('posts', response)
           return response
@@ -34,7 +34,7 @@ export default ctx => ({
     async postDelete(id) {
         let response
         try {
-          ctx.$postsApi.postEdit(id)
+          await ctx.$postsApi.postEdit(id)
           //TODO add store
           //window.localStorage.setItem('posts', response)
           return response

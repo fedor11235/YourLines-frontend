@@ -3,7 +3,6 @@ import fs from 'fs'
 const env = require('./env')
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'YourLines',
     htmlAttrs: {
@@ -31,43 +30,44 @@ export default {
     hoistUseStatements: true
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     { src: './assets/css/public.scss', lang: 'scss' }
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~plugins/api',
     '~plugins/services',
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/style-resources'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  // modules: [
-  //   [
-  //     '@nuxtjs/axios',
-  //     {
-  //       baseURL: env.baseURL,
-  //       credentials: true
-  //     }
-  //   ]
-  // ],
+  modules: [
+    [
+      '@nuxtjs/axios',
+      {
+        baseURL: 'http://127.0.0.1:3000',
+        proxy: true
+      }
+    ]
+  ],
+  proxy: {
+    '/api': {
+      target: 'http://127.0.0.1:3000',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '/' },
+    },
+  },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  server: {
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'yourLines.key')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'yourLines.crt'))
-    }
-  }
+  // server: {
+  //   https: {
+  //     key: fs.readFileSync(path.resolve(__dirname, 'yourLines.key')),
+  //     cert: fs.readFileSync(path.resolve(__dirname, 'yourLines.crt'))
+  //   }
+  // }
 }

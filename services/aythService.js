@@ -2,7 +2,7 @@ export default ctx => ({
   async userLogin(payload) {
     let response
     try {
-      response = ctx.$authApi.userLogin(payload)
+      response = await ctx.$authApi.userLogin(payload)
       window.localStorage.setItem('login', response.user)
       return response.login
     } catch (e) {
@@ -13,7 +13,7 @@ export default ctx => ({
     let response
     try {
       console.log(ctx)
-      response = ctx.$aythApi.userRegistry(payload)
+      response = await ctx.$aythApi.userRegistry(payload)
       console.log(response, 'Sresponse')
       window.localStorage.setItem('login', response.user)
       return response.registry

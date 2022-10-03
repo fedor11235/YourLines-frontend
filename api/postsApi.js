@@ -1,6 +1,6 @@
 export default api => ({
     postsGetAll() {
-      return api.$get('/posts', formData)
+      return api.$get('/api/posts')
     },
     postAdd(payload) {
       const { image, header, description, comments } = payload
@@ -17,7 +17,7 @@ export default api => ({
       if(comments) {
         formData.append('comments', comments)
       }
-      api.$post('/posts/add', formData)
+      api.$post('/api/posts/add', formData)
     },
     postEdit(payload) {
       const { id, image, header, description, comments } = payload
@@ -34,10 +34,10 @@ export default api => ({
       if(comments) {
         formData.append('comments', comments)
       }
-      api.$patch(`/posts/${id}`, formData)
+      api.$patch(`/api/posts/${id}`, formData)
     },
     postDelete(id) {
-      api.$delete(`/posts/${id}`)
+      api.$delete(`/api/posts/${id}`)
     }
   })
   
