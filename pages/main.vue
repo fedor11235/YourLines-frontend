@@ -1,7 +1,5 @@
 <template lang="pug">
-  .login
-    login-cover
-    login-form
+.main pipa!
 </template>
 
 <script>

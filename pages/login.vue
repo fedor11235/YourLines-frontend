@@ -1,7 +1,7 @@
 <template lang="pug">
-  .login
-    login-cover
-    login-form
+.login
+  login-cover
+  login-form
 </template>
 
 <script>

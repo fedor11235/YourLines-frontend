@@ -1,5 +1,7 @@
 import path from 'path'
 import fs from 'fs'
+const env = require('./env')
+console.log(env)
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -18,6 +20,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  env: env,
 
   styleResources: {
     scss: [
@@ -52,7 +56,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-
   server: {
     https: {
       key: fs.readFileSync(path.resolve(__dirname, 'yourLines.key')),
