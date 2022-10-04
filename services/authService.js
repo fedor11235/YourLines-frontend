@@ -12,9 +12,7 @@ export default ctx => ({
   async userRegistry(payload) {
     let response
     try {
-      console.log(ctx)
-      response = await ctx.$aythApi.userRegistry(payload)
-      console.log(response, 'Sresponse')
+      response = await ctx.$authApi.userRegistry(payload)
       window.localStorage.setItem('login', response.user)
       return response.registry
     } catch (e) {

@@ -1,7 +1,7 @@
-import aythService from '../services/aythService'
+import authService from '../services/authService'
 import postsService from '../services/postsService'
 
 export default (ctx, inject) => {
-  inject('aythService', aythService(ctx))
+  inject('authService', authService(ctx))
   inject('postsService', postsService(ctx))
 }

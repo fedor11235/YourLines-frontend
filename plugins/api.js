@@ -1,7 +1,7 @@
-import aythApi from '../api/aythApi'
+import authApi from '../api/authApi'
 import postsApi from '../api/postsApi'
 
 export default ({ $axios, app, res }, inject) => {
-  inject('aythApi', aythApi($axios))
+  inject('authApi', authApi($axios))
   inject('postsApi', postsApi($axios))
 }
