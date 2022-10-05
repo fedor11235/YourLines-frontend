@@ -1,5 +1,5 @@
 <template lang="pug">
-.user-feed
+.user-home
     input.post-upload(type="file" @change="handlerUploadImage" ref="fileInput" accept="image/*")
     .post-created(ref="post-created")
         .post-header
@@ -59,7 +59,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.user-feed {
+.user-home {
     .post-upload {
         display: none;
         visibility: hidden;
@@ -185,7 +185,6 @@ export default {
                 &:active {
                    transform: scale(0.975);
                 }
-
             }
             .post-resurse{
                 width: 100px;

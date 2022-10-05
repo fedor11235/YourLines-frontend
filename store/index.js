@@ -1,15 +1,23 @@
 export const state = () => ({
     user: {
         email: '',
-        nickname: ''
+        nickname: 'None',
+        description: 'None',
+        link: 'None'
     },
     posts: [],
+    page: 'profile'
 })
 
 export const getters = {
 }
 
 export const mutations = {
+    // Operations with users
+    PAGE_CHANGE(state, page) {
+        state.page = page
+    },
+
     // Operations with users
     USER_SAVE_DATA(state, user) {
         for (const property in user) {
