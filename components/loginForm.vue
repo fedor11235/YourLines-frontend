@@ -26,7 +26,7 @@ export default {
       if(emailValid) {
         const response = await this.$authService.userLogin({login: this.email, password: this.password})
         if (response) {
-          this.$router.push('/main')
+          this.$router.push('/home')
           // this.$nuxt.$router.replace({ path: '/main '})
           return
         } else {
@@ -41,7 +41,7 @@ export default {
       if(emailValid) {
         const response = await this.$authService.userRegistry({login: this.email, password: this.password})
         if (response) {
-          this.$router.push('/main')
+          this.$router.push('/home')
           return
         } else {
           alert('The user is already registered for this email')

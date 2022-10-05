@@ -3,55 +3,49 @@
   ul
     li
       .toolbar-avatar
-    li(@click="pageChange('home')") 
-      .toolbar-home 
-      | Home
-    li(@click="pageChange('notifications')")
-      .toolbar-notifications 
-      | Notifications
-    li(@click="pageChange('messages')")
-      .toolbar-messages 
-      | Messages
-    li(@click="pageChange('bookmarks')")
-      .toolbar-bookmarks 
-      | Bookmarks
-    li(@click="pageChange('lists')")
-      .toolbar-lists 
-      | Lists
-    li(@click="pageChange('subscriptions')")
-      .toolbar-subscriptions 
-      | Subscriptions
-    li(@click="pageChange('my-profile')")
-      .toolbar-profile 
-      | My profile
+    li(@click="$router.push('/home')") 
+      toolbar-item(icon="home" label="Home")
+    li(@click="$router.push('/notifications')")
+      toolbar-item(icon="notifications" label="Notifications")
+    li(@click="$router.push('/messages')")
+      toolbar-item(icon="messages" label="Messages")
+    li(@click="$router.push('/bookmarks')")
+      toolbar-item(icon="bookmarks" label="Bookmarks")
+    li(@click="$router.push('/lists')")
+      toolbar-item(icon="lists" label="Lists")
+    li(@click="$router.push('/subscriptions')")
+      toolbar-item(icon="subscriptions" label="Subscriptions")
+    li(@click="$router.push('/profile')")
+      toolbar-item(icon="my-profile" label="My profile")
     li 
-      button.toolbar-post(@click="handlerAddPost") 
+      button.toolbar-post(@click="$router.push('/create')" :class="{'toolbar-active': page === 'new-post'}") 
         //- .toolbar-addpost
         .toolbar-textpost Post
     //- li(@click="pageChange('home')") More
 </template>
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 export default {
+  computed: {
+    ...mapState({
+      page: state => state.page
+    })
+  },
   methods: {
     ...mapMutations({
       pageChange: 'PAGE_CHANGE'
-    }),
+    })
   }
-  
 }
 </script>
 <style lang="scss" scoped>
 .user-toolbar {
   display: flex;
   justify-content: space-evenly;
-  // height: 242px;
-  // width: 100vw;
   padding: 35px 0 50px;
   color: #8a96a3;
   background: #fdfdfd;
   li {
-    display: flex;
     margin-bottom: 21px;
     cursor: pointer;
     &:hover {
@@ -155,6 +149,10 @@ export default {
       }
       &:active {
         transform: scale(0.975);
+      }
+      &.toolbar-active {
+        background-color: #f2f2f2;
+        color: rgba(0, 0, 0, 0.9);
       }
       .toolbar-addpost {
         position: absolute;
