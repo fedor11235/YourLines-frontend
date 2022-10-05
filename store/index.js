@@ -19,6 +19,18 @@ export const mutations = {
     },
 
     // Operations with users
+    USER_SAVE_EMAIL(state, email) {
+        state.user.email = email
+    },
+    USER_SAVE_NICKNAME(state, nickname) {
+        state.user.nickname = nickname
+    },
+    USER_SAVE_DESCRIPTION(state, description) {
+        state.user.description = description
+    },
+    USER_SAVE_LINK(state, link) {
+        state.user.link = link
+    },
     USER_SAVE_DATA(state, user) {
         for (const property in user) {
             state.user[property] = user[property]

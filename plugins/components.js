@@ -9,8 +9,8 @@ import toolbarItem from '@/components/elements/toolbarItem'
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
 
-import settingsNotifications from '@/components/settings/settingsNotifications'
-import settingsProfile from '@/components/settings/settingsProfile'
+import settingsEditNotifications from '@/components/settings/settingsEditNotifications'
+import settingsEditProfile from '@/components/settings/settingsEditProfile'
 
 import userBookmarks from '@/components/user/userBookmarks'
 import userHome from '@/components/user/userHome'
@@ -35,8 +35,8 @@ export default () => {
   Vue.component('login-cover', loginCover)
   Vue.component('login-form', loginForm)
 
-  Vue.component('settings-notifications', settingsNotifications)
-  Vue.component('settings-profile', settingsProfile)
+  Vue.component('settings-edit-notifications', settingsEditNotifications)
+  Vue.component('settings-edit-profile', settingsEditProfile)
 
   Vue.component('user-bookmarks', userBookmarks)
   Vue.component('user-home', userHome)

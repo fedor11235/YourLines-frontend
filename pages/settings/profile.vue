@@ -2,7 +2,7 @@
 .settings-profile
     user-toolbar
     user-settings
-    user-news
+    settings-edit-profile
 </template>
 
 <script>

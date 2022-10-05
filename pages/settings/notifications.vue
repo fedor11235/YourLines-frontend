@@ -2,7 +2,7 @@
 .settings-notifications
     user-toolbar
     user-settings
-    user-news
+    settings-edit-notifications
 </template>
 
 <script>
