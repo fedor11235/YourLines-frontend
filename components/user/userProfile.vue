@@ -94,7 +94,7 @@ export default {
         .profile-feed {
             position: relative;
             height: 50%;
-            background-image: url(../assets/img/test-header.jpeg);
+            background-image: url(@/assets/img/test-header.jpeg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -106,7 +106,7 @@ export default {
                 left: 16px;
                 width: 96px;
                 height: 96px;
-                background-image: url(../assets/img/avatar-big.png);
+                background-image: url(@/assets/img/avatar-big.png);
                 background-size: 90% 90%;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -195,7 +195,7 @@ export default {
                         height: 48px;
                         width: 48px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/avatar.png);
+                        background-image: url(@/assets/img/avatar.png);
                         background-size: 50% 50%;
                         background-color: #f2f2f2;
                         background-repeat: no-repeat;
@@ -225,7 +225,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/edit.png);
+                        background-image: url(@/assets/img/edit.png);
                         background-size: 50% 50%;
                         background-color: #a0b9f1;
                         background-repeat: no-repeat;
@@ -242,7 +242,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/save.png);
+                        background-image: url(@/assets/img/save.png);
                         background-size: 50% 50%;
                         background-color: #a0f1ab;
                         background-repeat: no-repeat;
@@ -263,7 +263,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/delete.png);
+                        background-image: url(@/assets/img/delete.png);
                         background-size: 50% 50%;
                         background-color: #eb8c8c;
                         background-repeat: no-repeat;
@@ -298,7 +298,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/delete.png);
+                        background-image: url(@/assets/img/delete.png);
                         background-size: 50% 50%;
                         background-color: #f2f2f2;
                         background-repeat: no-repeat;
@@ -320,7 +320,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/add-file.png);
+                        background-image: url(@/assets/img/add-file.png);
                         background-size: 50% 50%;
                         background-color: #f2f2f2;
                         background-repeat: no-repeat;
@@ -348,7 +348,7 @@ export default {
                         height: 32px;
                         width: 32px;
                         border-radius: 50%;
-                        background-image: url(../assets/img/delete.png);
+                        background-image: url(@/assets/img/delete.png);
                         background-size: 50% 50%;
                         background-color: #f2f2f2;
                         background-repeat: no-repeat;

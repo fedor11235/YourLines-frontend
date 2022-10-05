@@ -1,5 +1,5 @@
 <template lang="pug">
-.user-news
+.settings-profile
     .news-input
         .news-icon
         input.news-search(placeholder="user search")
@@ -40,7 +40,7 @@ export default {
             left: 6px;
             width: 18px;
             height: 18px;
-            background-image: url(../assets/img/search.png);
+            background-image: url(@/assets/img/search.png);
             background-size: cover;
             background-position: center;
         }

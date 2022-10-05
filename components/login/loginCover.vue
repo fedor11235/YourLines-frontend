@@ -1,12 +1,16 @@
 <template lang="pug">
-.user-notifications
-    header-feed(title="Notifications")
+.login-cover
 </template>
+
 <script>
 export default {
+  
 }
 </script>
+
 <style lang="scss" scoped>
-.user-notifications {
+.login-cover {
+  background: violet;
 }
+
 </style>

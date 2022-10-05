@@ -1,6 +1,6 @@
 <template lang="pug">
 .toolbar-item
-    .item(:style="{backgroundImage: `url(${require(`../assets/img/${icon}.png`)})`}")
+    .item(:style="{backgroundImage: `url(${require(`@/assets/img/${icon}.png`)})`}")
     | {{label}}
 </template>
 <script>
@@ -14,9 +14,6 @@ export default {
             type: String,
             required: true
         }
-    },
-    mounted() {
-        console.log(this.icon, 'icon')
     }
 }
 </script>
@@ -29,7 +26,8 @@ export default {
         height: 21px;
         margin-left: -16px;
         margin-right: 12px;
-        background-size: cover;
+        background-size: 98% 98%;
+        background-repeat: no-repeat;
     }
 }
 </style>

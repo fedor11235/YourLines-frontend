@@ -37,6 +37,8 @@ export default {
   plugins: [
     '~plugins/api',
     '~plugins/services',
+    '~plugins/libraries',
+    '~plugins/components'
   ],
 
   components: true,

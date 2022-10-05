@@ -17,15 +17,28 @@
       toolbar-item(icon="subscriptions" label="Subscriptions")
     li(@click="$router.push('/profile')")
       toolbar-item(icon="my-profile" label="My profile")
+    li(@click="expandOptions=!expandOptions")
+      toolbar-item(icon="more" label="More")
+    ul(v-if="expandOptions")
+      li(@click="$router.push('/settings')")
+        toolbar-item(icon="settings" label="Settings")
+      li(@click="$router.push('/card')")
+        toolbar-item(icon="bank-card" label="Add a card")
+      li(@click="$router.push('/creator')")
+        toolbar-item(icon="creator" label="Become a Creator")
     li 
       button.toolbar-post(@click="$router.push('/create')" :class="{'toolbar-active': page === 'new-post'}") 
-        //- .toolbar-addpost
         .toolbar-textpost Post
-    //- li(@click="pageChange('home')") More
+
 </template>
 <script>
 import { mapMutations, mapState } from 'vuex'
 export default {
+  data() {
+    return {
+      expandOptions: false
+    }
+  },
   computed: {
     ...mapState({
       page: state => state.page
@@ -41,6 +54,7 @@ export default {
 <style lang="scss" scoped>
 .user-toolbar {
   display: flex;
+  min-width: 183px;
   justify-content: space-evenly;
   padding: 35px 0 50px;
   color: #8a96a3;
@@ -48,6 +62,10 @@ export default {
   li {
     margin-bottom: 21px;
     cursor: pointer;
+    -ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
     &:hover {
       color: rgba(0, 0, 0, 0.9);
     }
@@ -57,7 +75,7 @@ export default {
       margin-left: -26px;
       border-radius: 50%;
       background-color: rgb(242,242,242);
-      background-image: url(../assets/img/avatar-big.png);
+      background-image: url(@/assets/img/avatar-big.png);
       background-size: 80% 80%;
       background-position: center;
       background-repeat: no-repeat;
@@ -73,7 +91,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/home.png);
+      background-image: url(@/assets/img/home.png);
       background-size: cover;
     }
 
@@ -82,7 +100,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/notifications.png);
+      background-image: url(@/assets/img/notifications.png);
       background-size: cover;
     }
 
@@ -91,7 +109,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/messages.png);
+      background-image: url(@/assets/img/messages.png);
       background-size: cover;
     }
 
@@ -100,7 +118,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/bookmarks.png);
+      background-image: url(@/assets/img/bookmarks.png);
       background-size: cover;
     }
 
@@ -109,7 +127,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/lists.png);
+      background-image: url(@/assets/img/lists.png);
       background-size: cover;
     }
 
@@ -118,7 +136,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/subscriptions.png);
+      background-image: url(@/assets/img/subscriptions.png);
       background-size: cover;
     }
 
@@ -127,7 +145,7 @@ export default {
       height: 21px;
       margin-left: -16px;
       margin-right: 12px;
-      background-image: url(../assets/img/my-profile.png);
+      background-image: url(@/assets/img/my-profile.png);
       background-size: cover;
     }
 
@@ -153,20 +171,6 @@ export default {
       &.toolbar-active {
         background-color: #f2f2f2;
         color: rgba(0, 0, 0, 0.9);
-      }
-      .toolbar-addpost {
-        position: absolute;
-        left: -8px;
-        top: 8px;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        margin-left: 16px;
-        background-image: url(../assets/img/plus.png);
-        background-size: 50% 50%;
-        background-position: center;
-        transform: rotate(180deg);
-        background-repeat: no-repeat;
       }
       .toolbar-textpost {
         
