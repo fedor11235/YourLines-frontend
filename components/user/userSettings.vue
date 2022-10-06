@@ -4,12 +4,15 @@
     .settings-feed
         .settings-nickname
             .settings-link {{nickname}}
-        .settings-property 
+        .settings-property(@click="$router.push('/settings/profile')")
             | Profile Account
             .settings-arrow
-        .settings-property 
+        .settings-property(@click="$router.push('/settings/account')")
             | Account
             .settings-arrow
+        //- .settings-property(@click="$router.push('/settings/notifications')")
+        //-     | Notifications
+        //-     .settings-arrow
 </template>
 <script>
 import { mapState } from 'vuex'

@@ -5,12 +5,22 @@ import standartPage from '@/layouts/standartPage'
 import footerPage from '@/components/elements/footerPage'
 import headerFeed from '@/components/elements/headerFeed'
 import toolbarItem from '@/components/elements/toolbarItem'
+import headerMessages from '@/components/elements/headerMessages'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
 
 import settingsEditNotifications from '@/components/settings/settingsEditNotifications'
 import settingsEditProfile from '@/components/settings/settingsEditProfile'
+import settingsEditAccount from '@/components/settings/settingsEditAccount'
+
+import messagesNew from '@/components/messages/messagesNew'
+import messagesSearch from '@/components/messages/messagesSearch'
+import messagesСhoices from '@/components/messages/messagesСhoices'
+
+import paymentsInfo from '@/components/payments/paymentsInfo'
+import paymentsWallet from '@/components/payments/paymentsWallet'
+import paymentsAddCard from '@/components/payments/paymentsAddCard'
 
 import userBookmarks from '@/components/user/userBookmarks'
 import userHome from '@/components/user/userHome'
@@ -30,6 +40,7 @@ export default () => {
 
   Vue.component('footer-page', footerPage)
   Vue.component('header-feed', headerFeed)
+  Vue.component('header-messages', headerMessages)
   Vue.component('toolbar-item', toolbarItem)
 
   Vue.component('login-cover', loginCover)
@@ -37,6 +48,15 @@ export default () => {
 
   Vue.component('settings-edit-notifications', settingsEditNotifications)
   Vue.component('settings-edit-profile', settingsEditProfile)
+  Vue.component('settings-edit-account', settingsEditAccount)
+
+  Vue.component('messages-new', messagesNew)
+  Vue.component('messages-search', messagesSearch)
+  Vue.component('messages-choises', messagesСhoices)
+
+  Vue.component('payments-info', paymentsInfo)
+  Vue.component('payments-wallet', paymentsWallet)
+  Vue.component('payments-add-card', paymentsAddCard)
 
   Vue.component('user-bookmarks', userBookmarks)
   Vue.component('user-home', userHome)

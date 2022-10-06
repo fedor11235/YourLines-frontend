@@ -1,5 +1,5 @@
 <template lang="pug">
-.home
+.notifications
   user-toolbar
   user-notifications
   user-news
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.notifications {
   height: 100vh;
   display: grid;
   background-color: transparent;

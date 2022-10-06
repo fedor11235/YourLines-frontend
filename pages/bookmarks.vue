@@ -1,5 +1,5 @@
 <template lang="pug">
-.home
+.bookmarks
   user-toolbar
   user-bookmarks
   user-news
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.bookmarks {
   height: 100vh;
   display: grid;
   background-color: transparent;

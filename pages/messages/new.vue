@@ -1,13 +1,14 @@
 <template lang="pug">
-.settings-notifications
+.messages
     user-toolbar
-    user-settings
-    settings-edit-notifications
+    messages-new
+    messages-search
 </template>
 
 <script>
 import { mapState } from 'vuex'
 export default {
+    // layout: 'standartPage'
     computed: {
     ...mapState({
         page: state => state.page
@@ -17,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.settings-notifications {
+.messages {
     height: 100vh;
     display: grid;
     background-color: transparent;

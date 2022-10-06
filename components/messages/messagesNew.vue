@@ -1,12 +1,12 @@
 <template lang="pug">
-.user-messages
-    header-messages
+.messages-new
+    header-feed(title="New messages")
 </template>
 <script>
 export default {
 }
 </script>
 <style lang="scss" scoped>
-.user-messages {
+.messages-new {
 }
 </style>

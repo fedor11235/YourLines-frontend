@@ -1,5 +1,5 @@
 <template lang="pug">
-.home
+.create
   user-toolbar
   user-new-post
   user-news
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.create {
   height: 100vh;
   display: grid;
   background-color: transparent;

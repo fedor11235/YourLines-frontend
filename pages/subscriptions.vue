@@ -1,8 +1,7 @@
 <template lang="pug">
-.home
+.subscriptions
   user-toolbar
   user-subscriptions
-  user-news
 </template>
 
 <script>
@@ -18,11 +17,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.subscriptions {
   height: 100vh;
   display: grid;
   background-color: transparent;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
 }
 </style>

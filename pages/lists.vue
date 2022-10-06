@@ -1,5 +1,5 @@
 <template lang="pug">
-.home
+.lists
   user-toolbar
   user-lists
   user-news
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.lists {
   height: 100vh;
   display: grid;
   background-color: transparent;

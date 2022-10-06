@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .settings-edit-profile {
     background-color: #fdfdfd;
+    max-width: 640px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
         width: 0;
@@ -53,13 +54,12 @@ export default {
     .edit-profile-header {
         display: flex;
         flex-direction: column;
-        height: 460px;
         .edit-profile-feed {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50%;
+            height: 230px;
             background-image: url(@/assets/img/test-header.jpeg);
             background-size: cover;
             background-position: center;
@@ -151,7 +151,6 @@ export default {
             display: flex;
             flex-direction: column;
             background-color: #fdfdfd;
-            height: 50%;
             padding: 16px;
             padding-top: 48px;
             .edit-profile-input {

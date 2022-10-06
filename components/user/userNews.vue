@@ -17,7 +17,8 @@ export default {
     justify-content: space-evenly;
     height: 100vh;
     width: 100%;
-    border: 16px solid #fdfdfd;
+    padding: 16px;
+    background-color: #fdfdfd;
     .news-input {
         position: relative;
         padding-bottom: 16px;
@@ -55,7 +56,6 @@ export default {
     }
     .news-body {
         overflow-y: scroll;
-        background-color: #f2f2f2;
         height: 100%;
     }
 }

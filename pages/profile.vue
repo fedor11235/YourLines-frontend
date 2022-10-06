@@ -1,8 +1,7 @@
 <template lang="pug">
-.home
+.profile
   user-toolbar
   user-profile
-  user-news
 </template>
 
 <script>
@@ -18,11 +17,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.profile {
   height: 100vh;
   display: grid;
   background-color: transparent;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr;
 }
 </style>
