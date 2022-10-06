@@ -1,6 +1,6 @@
 <template lang="pug">
 .user-subscriptions
-    header-feed(title="Subscriptions")
+    header-feed(title="SUBSCRIPTIONS")
     .subscriptions-input
         .subscriptions-cansel(v-if="serachMode" @click="serachMode=false")
         .subscriptions-text(v-if="!serachMode" @click="serachMode=true") Search

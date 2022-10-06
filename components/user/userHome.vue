@@ -4,7 +4,7 @@
     .post-created(ref="post-created")
         .post-header
             .post-undo(v-if="header || image" @click="handlerUndo")
-            .post-title Home
+            .post-title HOME
             button.post-save(v-if="header || image" @click="handlerSavePost") Post
         hr.post-separate
         .post-input(ref="post-input" @input="handlerInput" placeholder="Create new post" contenteditable)

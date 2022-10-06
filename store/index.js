@@ -3,7 +3,10 @@ export const state = () => ({
         email: '',
         nickname: 'None',
         description: 'None',
-        link: 'None'
+        link: 'None',
+        idCards: false,
+        paymentHistory: [],
+        money: 0
     },
     posts: [],
     page: 'profile'

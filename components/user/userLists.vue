@@ -1,6 +1,6 @@
 <template lang="pug">
 .user-lists
-    header-feed(title="Lists")
+    header-feed(title="LISTS")
 </template>
 <script>
 export default {

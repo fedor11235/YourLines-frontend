@@ -1,7 +1,7 @@
 <template lang="pug">
 .header-messages
     .messages-header
-        .messages-title(v-if="!modeSearch") Messages
+        .messages-title(v-if="!modeSearch") MESSAGES
         input.messages-input(v-if="modeSearch" v-model="searchUser" placeholder="Search user")
         .messages-search(@click="modeSearch=true")
         .messages-cansel(v-if="modeSearch" @click="modeSearch=false")

@@ -26,11 +26,10 @@ ul {
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
-  &.link-inline {
-    border-bottom: 1px solid rgba(26, 26, 26, 0.12);
-  }
+  color:#7a92ef;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 *,
@@ -75,20 +74,3 @@ hr {
 .p-0 {
   padding: 0 !important;
 }
-
-// .text-link {
-//   cursor: pointer;
-//   text-decoration: underline;
-//   text-decoration-color: rgba(26, 26, 26, 0.12);
-//   text-underline-offset: 4px;
-//   transition: all 200ms ease;
-//   &:hover {
-//     text-decoration-color: rgba(0, 0, 0, 0.55);
-//   }
-//   &:focus {
-//     text-decoration-color: rgba(0, 0, 0, 0.55);
-//   }
-//   &:active {
-//     text-decoration-color: rgb(26, 26, 26);
-//   }
-// }

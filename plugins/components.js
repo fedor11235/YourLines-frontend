@@ -6,6 +6,9 @@ import footerPage from '@/components/elements/footerPage'
 import headerFeed from '@/components/elements/headerFeed'
 import toolbarItem from '@/components/elements/toolbarItem'
 import headerMessages from '@/components/elements/headerMessages'
+import headerPayments from '@/components/elements/headerPayments'
+import warning from '@/components/elements/warning'
+import information from '@/components/elements/information'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -41,7 +44,10 @@ export default () => {
   Vue.component('footer-page', footerPage)
   Vue.component('header-feed', headerFeed)
   Vue.component('header-messages', headerMessages)
+  Vue.component('header-payments', headerPayments)
   Vue.component('toolbar-item', toolbarItem)
+  Vue.component('warning', warning)
+  Vue.component('information', information)
 
   Vue.component('login-cover', loginCover)
   Vue.component('login-form', loginForm)
