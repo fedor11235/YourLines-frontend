@@ -16,6 +16,7 @@ export default {
     border-left: 20px solid rgba(255, 96, 96, 0.25);
     border-radius: 6px;
     min-height: 53px;
+    text-align: left;
     .warning-icon {
         position: absolute;
         left: 6px;

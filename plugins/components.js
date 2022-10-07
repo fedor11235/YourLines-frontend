@@ -7,11 +7,15 @@ import headerFeed from '@/components/elements/headerFeed'
 import toolbarItem from '@/components/elements/toolbarItem'
 import headerMessages from '@/components/elements/headerMessages'
 import headerPayments from '@/components/elements/headerPayments'
+import headerCreator from '@/components/elements/headerCreator'
 import warning from '@/components/elements/warning'
 import information from '@/components/elements/information'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
+
+import creatorInfo from '@/components/creator/creatorInfo'
+import creatorNotification from '@/components/creator/creatorNotification'
 
 import settingsEditNotifications from '@/components/settings/settingsEditNotifications'
 import settingsEditProfile from '@/components/settings/settingsEditProfile'
@@ -45,9 +49,13 @@ export default () => {
   Vue.component('header-feed', headerFeed)
   Vue.component('header-messages', headerMessages)
   Vue.component('header-payments', headerPayments)
+  Vue.component('header-creator', headerCreator)
   Vue.component('toolbar-item', toolbarItem)
   Vue.component('warning', warning)
   Vue.component('information', information)
+
+  Vue.component('creator-info', creatorInfo)
+  Vue.component('creator-notification', creatorNotification)
 
   Vue.component('login-cover', loginCover)
   Vue.component('login-form', loginForm)

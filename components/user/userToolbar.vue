@@ -150,8 +150,6 @@ export default {
     }
 
     .toolbar-post {
-      position: relative;
-      // background-color: transparent;
       background-color: #a0b9f1;
       border-radius: 1000px;
       margin-left: -21px;
@@ -161,7 +159,6 @@ export default {
       font-size: 18px;
       color: #fdfdfd;
       transition: all 200ms ease;
-      // border: 1px solid #8a96a3;
       &:hover {
         background-color: #7a92ef;
       }
@@ -171,9 +168,6 @@ export default {
       &.toolbar-active {
         background-color: #f2f2f2;
         color: rgba(0, 0, 0, 0.9);
-      }
-      .toolbar-textpost {
-        
       }
     }
   }

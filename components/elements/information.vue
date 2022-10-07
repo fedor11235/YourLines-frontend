@@ -16,6 +16,7 @@ export default {
     border-left: 20px solid rgba(0,175,240,.25);
     border-radius: 6px;
     min-height: 53px;
+    text-align: left;
     .information-icon {
         position: absolute;
         left: 6px;

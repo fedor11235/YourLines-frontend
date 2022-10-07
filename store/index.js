@@ -6,7 +6,8 @@ export const state = () => ({
         link: 'None',
         idCards: false,
         paymentHistory: [],
-        money: 0
+        money: 0,
+        approved: false
     },
     posts: [],
     page: 'profile'
