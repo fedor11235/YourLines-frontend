@@ -35,7 +35,7 @@
         .creator-info-delmiter
         information(v-if="!approved") We recommend using a mobile device or a device with a camera to perform this verification step
         .creator-info-delmiter
-        button.creator-info-button(@click="$router.push('/create')") Full check
+        button.creator-info-button(@click="$router.push('/verification')") Full check
         .creator-info-delmiter
 
 

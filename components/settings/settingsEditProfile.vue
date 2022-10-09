@@ -9,12 +9,18 @@
                 .edit-profile-avatar-upload
                 .edit-profile-avatar-delete
         .edit-profile-info
-            input.edit-profile-input(v-model="nicknameSave" placeholder="nickname")
-            input.edit-profile-input(v-model="linkSave" placeholder="link")
-            input.edit-profile-input(v-model="descriptionSave" placeholder="description")
-            input.edit-profile-input(v-model="locationSave" placeholder="location")
-            input.edit-profile-input(v-model="websiteURLSave" placeholder="Website URL")
-            input.edit-profile-input(v-model="wishListSave" placeholder="A wish list")
+            .horizontal-divider
+            input-label(v-model="nicknameSave" placeholder="nickname")
+            .horizontal-divider
+            input-label(v-model="linkSave" placeholder="link")
+            .horizontal-divider
+            input-label(v-model="descriptionSave" placeholder="description")
+            .horizontal-divider
+            input-label(v-model="locationSave" placeholder="location")
+            .horizontal-divider
+            input-label(v-model="websiteURLSave" placeholder="Website URL")
+            .horizontal-divider
+            input-label(v-model="wishListSave" placeholder="A wish list")
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -153,15 +159,6 @@ export default {
             background-color: #fdfdfd;
             padding: 16px;
             padding-top: 48px;
-            .edit-profile-input {
-                font-size: 16px;
-                font-weight: 500;
-                margin-bottom: 21px;
-                padding: 10px 16px;
-                border: 1px solid #8a96a3;
-                border-radius: 5px;
-                height: 40px;
-            }
             .edit-profile-textarea {
                 font-size: 16px;
                 font-weight: 500;

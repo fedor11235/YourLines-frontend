@@ -3,17 +3,20 @@
     header-feed(title="Account editing")
     .edit-account-info
         .edit-account-title Account Information
-        input.edit-account-input(v-model="nicknameSave" placeholder="nickname")
-        input.edit-account-input(v-model="emailSave" placeholder="email")
-        input.edit-account-input(v-model="passwordSave" placeholder="phone number")
-        .edit-account-delmiter
+        input-label(v-model="nicknameSave" placeholder="nickname")
+        .horizontal-divider
+        input-label(v-model="emailSave" placeholder="email")
+        .horizontal-divider
+        input-label(v-model="passwordSave" placeholder="phone number")
+        .horizontal-divider
 
         .edit-account-title Safety
         .edit-account-botton(v-if="!createPassword" @click="createPassword=true") Create a new password
         .edit-account-botton(v-if="createPassword" @click="createPassword=false") Cancel creating a new password
-        input.edit-account-input(v-if="createPassword" v-model="passwordNew" placeholder="password")
-        input.edit-account-input(v-if="createPassword" v-model="passwordСonfirm" placeholder="password")
-        .edit-account-delmiter
+        input-label(v-if="createPassword" v-model="passwordNew" placeholder="password")
+        .horizontal-divider
+        input-label(v-if="createPassword" v-model="passwordСonfirm" placeholder="password")
+        .horizontal-divider
 
         .edit-account-title Account Management
         .edit-account-botton Delete your account
@@ -57,13 +60,13 @@ export default {
         flex-direction: column;
         height: 100%;
         background-color: #fdfdfd;
+        padding: 16px;
         .edit-account-delmiter {
             height: 8px;
             width: 100%;
             background-color: #f2f2f2
         }
         .edit-account-title {
-            margin: 16px;
             font-size: 21px;
             font-weight: 500;
             margin-bottom: 21px;

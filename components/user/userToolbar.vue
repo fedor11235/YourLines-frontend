@@ -4,31 +4,33 @@
     li
       .toolbar-avatar
     li(@click="$router.push('/home')") 
-      toolbar-item(icon="home" label="Home")
+      toolbar-item(icon="home" :label="$t('TOOLBAR.HOME')")
     li(@click="$router.push('/notifications')")
-      toolbar-item(icon="notifications" label="Notifications")
+      toolbar-item(icon="notifications" :label="$t('TOOLBAR.NOTIFICATION')")
     li(@click="$router.push('/messages')")
-      toolbar-item(icon="messages" label="Messages")
+      toolbar-item(icon="messages" :label="$t('TOOLBAR.MESSAGES')")
     //- li(@click="$router.push('/bookmarks')")
-    //-   toolbar-item(icon="bookmarks" label="Bookmarks")
+    //-   toolbar-item(icon="bookmarks" :label="$t('TOOLBAR.BOOKMARKS')")
     //- li(@click="$router.push('/lists')")
-    //-   toolbar-item(icon="lists" label="Lists")
+    //-   toolbar-item(icon="lists" :label="$t('TOOLBAR.LISTS')")
     li(@click="$router.push('/subscriptions')")
-      toolbar-item(icon="subscriptions" label="Subscriptions")
+      toolbar-item(icon="subscriptions" :label="$t('TOOLBAR.SUBSCRIPTION')")
     li(@click="$router.push('/profile')")
-      toolbar-item(icon="my-profile" label="My profile")
+      toolbar-item(icon="my-profile" :label="$t('TOOLBAR.PROFILE')")
     li(@click="expandOptions=!expandOptions")
-      toolbar-item(icon="more" label="More")
+      toolbar-item(icon="more" :label="$t('TOOLBAR.MORE')")
     ul(v-if="expandOptions")
       li(@click="$router.push('/settings')")
-        toolbar-item(icon="settings" label="Settings")
+        toolbar-item(icon="settings" :label="$t('TOOLBAR.SETTINGS')")
       li(@click="$router.push('/payments')")
-        toolbar-item(icon="bank-card" label="Add a card")
+        toolbar-item(icon="bank-card" :label="$t('TOOLBAR.PAYMENTS')")
       li(@click="$router.push('/creator')")
-        toolbar-item(icon="creator" label="Become a Creator")
+        toolbar-item(icon="creator" :label="$t('TOOLBAR.BECOME_CREATOR')")
+      li(@click="$router.push('/settings/language')")
+        toolbar-item(icon="my-profile" :label="$t('TOOLBAR.LANGUAGE')")
     li 
       button.toolbar-post(@click="$router.push('/create')" :class="{'toolbar-active': page === 'new-post'}") 
-        .toolbar-textpost Post
+        .toolbar-textpost {{$t('TOOLBAR.POST')}}
 
 </template>
 <script>
@@ -84,69 +86,6 @@ export default {
       &:hover {
         border: 1px solid rgba(0, 0, 0, 0.9);
       }
-    }
-
-    .toolbar-home {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/home.png);
-      background-size: cover;
-    }
-
-    .toolbar-notifications {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/notifications.png);
-      background-size: cover;
-    }
-
-    .toolbar-messages {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/messages.png);
-      background-size: cover;
-    }
-
-    .toolbar-bookmarks {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/bookmarks.png);
-      background-size: cover;
-    }
-
-    .toolbar-lists {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/lists.png);
-      background-size: cover;
-    }
-
-    .toolbar-subscriptions {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/subscriptions.png);
-      background-size: cover;
-    }
-
-    .toolbar-profile {
-      width: 21px;
-      height: 21px;
-      margin-left: -16px;
-      margin-right: 12px;
-      background-image: url(@/assets/img/my-profile.png);
-      background-size: cover;
     }
 
     .toolbar-post {

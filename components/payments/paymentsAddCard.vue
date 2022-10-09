@@ -5,37 +5,37 @@
         .add-card-title PAYMENT INFO
         .add-card-text We fully comply with the data security standards of the payment card industry.
         .add-card-inputs
-            input.add-card-input(placeholder="Country")
-            .add-card-vertical
-            input.add-card-input(placeholder="State / Province")
-        .add-card-horizontal
-        input.add-card-input(placeholder="Street")
-        .add-card-horizontal
+            input-label(placeholder="Country")
+            .vertical-divider
+            input-label(placeholder="State / Province")
+        .horizontal-divider
+        input-label(placeholder="Street")
+        .horizontal-divider
         .add-card-inputs
-            input.add-card-input(placeholder="City")
-            .add-card-vertical
-            input.add-card-input(placeholder="Postcode")
-        .add-card-horizontal
+            input-label(placeholder="City")
+            .vertical-divider
+            input-label(placeholder="Postcode")
+        .horizontal-divider
         .add-card-title BANK CARD DETAILS
         .add-card-inputs
-            input.add-card-input(placeholder="Email")
-            .add-card-vertical
-            input.add-card-input(placeholder="Name on the card")
-        .add-card-horizontal
-        input(placeholder="Bankcard number").add-card-input
-        .add-card-horizontal
+            input-label(placeholder="Email")
+            .vertical-divider
+            input-label(placeholder="Name on the card")
+        .horizontal-divider
+        input-label(placeholder="Bankcard number")
+        .horizontal-divider
         .add-card-inputs
-            input.add-card-input(placeholder="Card expiry date")
-            .add-card-vertical
-            input.add-card-input(placeholder="CVC")
-        .add-card-horizontal
+            input-label(placeholder="Card expiry date")
+            .vertical-divider
+            input-label(placeholder="CVC")
+        .horizontal-divider
         .add-card-checkboxes
             input.add-card-checkbox(type="checkbox" v-model="verifyAge")
-            .add-card-vertical
+            .vertical-divider
             .add-card-checktext Check here to certify that you are at least 18 years old and the legal age of residence
-        .add-card-horizontal
+        .horizontal-divider
         information YourLines will make a one-time fee of $0.10 when you add your payment card. Fees will appear as "OnlyFans" on your credit card statement.
-        .add-card-horizontal
+        .horizontal-divider
 </template>
 <script>
 export default {
@@ -69,15 +69,6 @@ export default {
         .add-card-inputs {
             display: flex;
         }
-        .add-card-input {
-            font-size: 16px;
-            font-weight: 500;
-            padding: 10px 16px;
-            border: 1px solid #8a96a3;
-            border-radius: 5px;
-            height: 40px;
-            width: 100%;
-        }
         .add-card-checkboxes {
             display: flex;
             .add-card-checkbox {
@@ -85,12 +76,6 @@ export default {
                 width: 21px;
                 cursor: pointer;
             }
-        }
-        .add-card-horizontal {
-            height: 21px;
-        }
-        .add-card-vertical {
-            width: 16px;
         }
     }
 }

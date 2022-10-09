@@ -1,0 +1,19 @@
+{
+    "BOOKMARKS": "Bookmarks",
+    "TOOLBAR": {
+        "HOME": "Home",
+        "NOTIFICATION": "Notifications",
+        "MESSAGES": "Messages",
+        "BOOKMARKS": "Bookmarks",
+        "LISTS": "Lists",
+        "SUBSCRIPTION": "Subscriptions",
+        "PROFILE": "Profile",
+        "MORE": "More",
+        "SETTINGS": "Settings",
+        "PAYMENTS": "Payments",
+        "ADD_CARD": "Add a card",
+        "BECOME_CREATOR": "Become a Creator",
+        "LANGUAGE": "Language",
+        "POST": "Create new post"
+    }
+}

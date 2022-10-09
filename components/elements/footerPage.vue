@@ -32,6 +32,9 @@ export default {
   background: #fdfdfd;
   li {
     cursor: pointer;
+    &:hover {
+      color: rgba(0, 0, 0, 0.9);
+    }
   }
 }
 </style>

@@ -17,6 +17,7 @@ export default {
     border-radius: 6px;
     min-height: 53px;
     text-align: left;
+    background-color: #fdfdfd;
     .warning-icon {
         position: absolute;
         left: 6px;

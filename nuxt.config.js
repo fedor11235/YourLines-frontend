@@ -38,10 +38,9 @@ export default {
     '~plugins/api',
     '~plugins/services',
     '~plugins/libraries',
+    '~plugins/router',
     '~plugins/components'
   ],
-
-  components: true,
 
   buildModules: [
     '@nuxtjs/style-resources'
@@ -54,7 +53,8 @@ export default {
         baseURL: 'http://127.0.0.1:3000',
         proxy: true
       }
-    ]
+    ],
+    '@nuxtjs/i18n'
   ],
   proxy: {
     '/api': {
@@ -62,6 +62,37 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/api': '/' },
     },
+  },
+
+  i18n: {
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: false,
+      fallbackLocale: 'ru'
+    },
+    // paths: {
+    //   en: '/',
+    //   ru: '/',
+    // },
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.json',
+        iso: 'en-US',
+        name:  'English'
+      },
+      {
+        code: 'ru',
+        file: 'ru-RU.json',
+        iso: 'ru-RU',
+        name:  'Русский'
+      }
+    ],
+    // skipSettingLocaleOnNavigate: true,
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'ru'
   },
 
   build: {

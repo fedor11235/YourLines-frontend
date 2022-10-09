@@ -1,0 +1,19 @@
+{
+    "BOOKMARKS": "Заметки",
+    "TOOLBAR": {
+        "HOME": "Главная",
+        "NOTIFICATION": "Уведомления",
+        "MESSAGES": "Сообщения",
+        "BOOKMARKS": "Заметки",
+        "LISTS": "Списки",
+        "SUBSCRIPTION": "Подписки",
+        "PROFILE": "Профиль",
+        "MORE": "Больше",
+        "SETTINGS": "Настройки",
+        "PAYMENTS": "Платежи",
+        "ADD_CARD": "Добавить банковскую карту",
+        "BECOME_CREATOR": "Стать создателем",
+        "LANGUAGE": "Язык",
+        "POST": "Новый пост"
+    }
+}

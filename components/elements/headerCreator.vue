@@ -1,9 +1,8 @@
 <template lang="pug">
 .header-creator
     .creator-header
-        .creator-title(v-if="!modeSearch") creator
-        input.creator-input(v-if="modeSearch" v-model="searchUser" placeholder="Search user")
-        .creator-information(v-if="!modeSearch" @click="$router.push('/messages/new')")
+        .creator-title creator
+        .creator-information(@click="$router.push('/verification')")
     hr.creator-separate
 </template>
 <script>

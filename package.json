@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/i18n": "^7.3.0",
     "@popperjs/core": "^2.11.6",
     "core-js": "^3.19.3",
     "fs": "0.0.1-security",

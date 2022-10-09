@@ -10,6 +10,7 @@ import headerPayments from '@/components/elements/headerPayments'
 import headerCreator from '@/components/elements/headerCreator'
 import warning from '@/components/elements/warning'
 import information from '@/components/elements/information'
+import inputLabel from '@/components/elements/inputLabel'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -20,6 +21,7 @@ import creatorNotification from '@/components/creator/creatorNotification'
 import settingsEditNotifications from '@/components/settings/settingsEditNotifications'
 import settingsEditProfile from '@/components/settings/settingsEditProfile'
 import settingsEditAccount from '@/components/settings/settingsEditAccount'
+import settingsEditLanguage from '@/components/settings/settingsEditLanguage'
 
 import messagesNew from '@/components/messages/messagesNew'
 import messagesSearch from '@/components/messages/messagesSearch'
@@ -53,6 +55,7 @@ export default () => {
   Vue.component('toolbar-item', toolbarItem)
   Vue.component('warning', warning)
   Vue.component('information', information)
+  Vue.component('input-label', inputLabel)
 
   Vue.component('creator-info', creatorInfo)
   Vue.component('creator-notification', creatorNotification)
@@ -63,6 +66,7 @@ export default () => {
   Vue.component('settings-edit-notifications', settingsEditNotifications)
   Vue.component('settings-edit-profile', settingsEditProfile)
   Vue.component('settings-edit-account', settingsEditAccount)
+  Vue.component('settings-edit-language', settingsEditLanguage)
 
   Vue.component('messages-new', messagesNew)
   Vue.component('messages-search', messagesSearch)
