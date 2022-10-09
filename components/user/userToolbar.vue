@@ -27,7 +27,7 @@
       li(@click="$router.push('/creator')")
         toolbar-item(icon="creator" :label="$t('TOOLBAR.BECOME_CREATOR')")
       li(@click="$router.push('/settings/language')")
-        toolbar-item(icon="my-profile" :label="$t('TOOLBAR.LANGUAGE')")
+        toolbar-item(icon="language" :label="$t('TOOLBAR.LANGUAGE')")
     li 
       button.toolbar-post(@click="$router.push('/create')" :class="{'toolbar-active': page === 'new-post'}") 
         .toolbar-textpost {{$t('TOOLBAR.POST')}}

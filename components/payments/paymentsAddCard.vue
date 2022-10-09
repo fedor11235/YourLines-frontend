@@ -1,9 +1,9 @@
 <template lang="pug">
 .payments-add-card
-    header-feed(title="ADD A CARD")
+    header-feed(:title="$t('PAYMENTS.CARD_TITLE')")
     .add-card-body
-        .add-card-title PAYMENT INFO
-        .add-card-text We fully comply with the data security standards of the payment card industry.
+        .add-card-title {{$t('PAYMENTS.CARD_INFO_TITLE')}}
+        .add-card-text {{$t('PAYMENTS.CARD_TEXT_TEXT')}}
         .add-card-inputs
             input-label(placeholder="Country")
             .vertical-divider
@@ -16,7 +16,7 @@
             .vertical-divider
             input-label(placeholder="Postcode")
         .horizontal-divider
-        .add-card-title BANK CARD DETAILS
+        .add-card-title {{$t('PAYMENTS.CARD_BANK_TITLE')}}
         .add-card-inputs
             input-label(placeholder="Email")
             .vertical-divider
@@ -32,9 +32,9 @@
         .add-card-checkboxes
             input.add-card-checkbox(type="checkbox" v-model="verifyAge")
             .vertical-divider
-            .add-card-checktext Check here to certify that you are at least 18 years old and the legal age of residence
+            .add-card-checktext  {{$t('PAYMENTS.CARD_CHECK')}}
         .horizontal-divider
-        information YourLines will make a one-time fee of $0.10 when you add your payment card. Fees will appear as "OnlyFans" on your credit card statement.
+        information {{$t('PAYMENTS.CARD_PAY')}}
         .horizontal-divider
 </template>
 <script>

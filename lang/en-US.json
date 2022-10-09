@@ -1,5 +1,105 @@
 {
-    "BOOKMARKS": "Bookmarks",
+    "BOOKMARKS": {
+        "TITLE": "BOOKMARKS"
+    },
+    "HOME": {
+        "TITLE": "HOME",
+        "SAVE_POST": "POST"
+    },
+    "LISTS": {
+        "TITLE": "LISTS"
+    },
+    "MESSAGES": {
+        "TITLE": "MESSAGES",
+        "HEADER_PLACEHOLDER": "Search user",
+        "CHOISES_HEADER": "Select any conversation or send a new message",
+        "NEW_MESSAGE": "A new message",
+        "NEW_MESSAGE_TITLE": "NEW MESSAGES",
+        "SELECT_USER": "Select a user to add a message to them"
+    },
+    "NEWS": {
+        "TITLE": "SUGGESTIONS",
+        "HEADER_PLACEHOLDER": "Search user"
+    },
+    "PAYMENTS": {
+        "TITLE": "PAYMENT CARDS",
+        "VERIFY": "Verify",
+        "HEADER_CARDS": "Your cards",
+        "HEADER_PAYMENTS": "Payments",
+        "CARD_TITLE": "ADD A CARD",
+        "CARD_INFO_TITLE": "PAYMENT INFO",
+        "CARD_TEXT_TEXT": "We fully comply with the data security standards of the payment card industry.",
+        "CARD_BANK_TITLE": "BANK CARD DETAILS",
+        "CARD_CHECK": "Check here to certify that you are at least 18 years old and the legal age of residence",
+        "CARD_PAY": "YourLines will make a one-time fee of $0.10 when you add your payment card. Fees will appear as 'YourLines' on your credit card statement.",
+        "CARD_WARNING_ONE": "Please",
+        "CARD_WARNING_TWO": "add a new card",
+        "CARD_WARNING_THREE": "to follow other users or top up your wallet.",
+        "CARD_SECURITY": "We fully comply with the data security standards of the payment card industry.",
+        "WALLET_HEADER": "Wallet Credits",
+        "WALLET_ADD": "ADD FUNDS TO YOUR WALLET",
+        "WALLET_LATEST": "ADD FUNDS TO YOUR WALLET",
+        "WALLET_NO": "Payments have not yet been made."
+    },
+    "CREATOR": {
+        "TITLE": "CREATOR",
+        "TEXTS": {
+            "1": "Your account has not been approved.",
+            "2": "We are unable to accept your recent referral application:",
+            "3": "- An additional form of ID is currently required (preferably: foreign passport with English letters)",
+            "4": ". Please note the possible requirements that must be met for ANY uploaded photo:",
+            "5": "1. Images cannot be cropped or resized;",
+            "6": "2. All images must be in color;",
+            "7": "3. The proposed documents must be in the form of photographs or scanned copies. Electronic documents or photographs photographs will",
+            "8": "deviations.",
+            "9": "4. All 4 documents must be kept;",
+            "10": "5. All issued, unexpired ID must be presented. No parts of the document can be edited,",
+            "11": "closed, cut or censored;",
+            "12": "6. Files must be in .PNG or .JPG format and no larger than 7 MB;",
+            "13": "Please note: If the documents you submit are not covered by ALL of the templates above, your application will not be",
+            "14": "processed and additional documents will be requested. This review keeps your applications for 24-48 hours.",
+            "15": "Thank you!"
+        },
+        "RECOMMEND": "We recommend using a mobile device or a device with a camera to perform this verification step",
+        "CHECK": "Full check",
+        "HISTORY_TITLE": "START EARNING",
+        "HISTORY_NO": "Verify your account to be able to set up Banking and Subscription price."
+    },
+    "NOTIFICATIONS": {
+        "TITLE": "NOTIFICATIONS"
+    },
+    "PROFILE": {
+        "MORE": "show more information",
+        "POSTS": "Posts",
+        "MEDIA": "Media"
+    },
+    "SETTINGS": {
+        "TITLE": "SETTINGS",
+        "PROFILE": "Profile",
+        "ACCOUNT": "Account",
+        "LANGUAGE": "Language",
+        "ACCOUNT_INFORMATION": "Account Information",
+        "SAFETY": "Safety",
+        "CREATE_PASSWORD": "Create a new password",
+        "CANCEL_PASSWORD": "Cancel creating a new password",
+        "ACCOUNT_MANAGEMENT": "Account Management",
+        "DELETE_YOUR_ACCOUNT": "Delete account",
+        "LANGUAGE_TITLE": "Change the language",
+        "NOTIFICATIONS_TITLE": "Editing Notifications",
+        "NOTIFICATIONS_SUBTITLE": "Preferences",
+        "PROFILE_TITLE": "Profile editing",
+        "PROFILE_NICKNAME": "nickname",
+        "PROFILE_LINK": "link",
+        "PROFILE_DESCRIPTION": "description",
+        "PROFILE_LOCATION": "location",
+        "PROFILE_WEBSITE": "Website URL",
+        "PROFILE_WISH_LIST": "A wish list"
+    },
+    "SUBSCRIPTIONS": {
+        "TITLE": "SUBSCRIPTIONS",
+        "SEARCH": "Search",
+        "HEADER_PLACEHOLDER": "Search user"
+    },
     "TOOLBAR": {
         "HOME": "Home",
         "NOTIFICATION": "Notifications",
@@ -15,5 +115,20 @@
         "BECOME_CREATOR": "Become a Creator",
         "LANGUAGE": "Language",
         "POST": "Create new post"
+    },
+
+    "FOOTER" : {
+        "HELP": "Help",
+        "HOW": "How it Work",
+        "COMPLAINTS_POLICY": "Complaints Policy",
+        "CONTRACT_FAN_CREATOR": "Standard Contract between Fan and Creator",
+        "ABOUT": "About",
+        "COOKIE_NOTICE": "Cookie Notice",
+        "SECURITY_CENTER": "Security center",
+        "TERMS_SERVICE": "Terms of Service",
+        "DMCA": "DMCA",
+        "WAS_CREATED": "how yourLines was created",
+        "PRIVACY": "privacy",
+        "ACCEPTABLE_POLICY": "Acceptable use policy"
     }
 }

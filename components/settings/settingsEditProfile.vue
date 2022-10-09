@@ -1,6 +1,6 @@
 <template lang="pug">
 .settings-edit-profile
-    header-feed(title="Profile editing")
+    header-feed(:title="$t('SETTINGS.PROFILE_TITLE')")
     .edit-profile-header
         .edit-profile-feed
             .edit-profile-header-upload
@@ -10,17 +10,17 @@
                 .edit-profile-avatar-delete
         .edit-profile-info
             .horizontal-divider
-            input-label(v-model="nicknameSave" placeholder="nickname")
+            input-label(v-model="nicknameSave" :placeholder="$t('SETTINGS.PROFILE_NICKNAME')")
             .horizontal-divider
-            input-label(v-model="linkSave" placeholder="link")
+            input-label(v-model="linkSave" :placeholder="$t('SETTINGS.PROFILE_LINK')")
             .horizontal-divider
-            input-label(v-model="descriptionSave" placeholder="description")
+            input-label(v-model="descriptionSave" :placeholder="$t('SETTINGS.PROFILE_DESCRIPTION')")
             .horizontal-divider
-            input-label(v-model="locationSave" placeholder="location")
+            input-label(v-model="locationSave" :placeholder="$t('SETTINGS.PROFILE_LOCATION')")
             .horizontal-divider
-            input-label(v-model="websiteURLSave" placeholder="Website URL")
+            input-label(v-model="websiteURLSave" :placeholder="$t('SETTINGS.PROFILE_WEBSITE')")
             .horizontal-divider
-            input-label(v-model="wishListSave" placeholder="A wish list")
+            input-label(v-model="wishListSave" :placeholder="$t('SETTINGS.PROFILE_WISH_LIST')")
 </template>
 <script>
 import { mapState } from 'vuex'

@@ -1,6 +1,6 @@
 <template lang="pug">
 .messages-new
-    header-feed(title="New messages")
+    header-feed(:title="$t('MESSAGES.NEW_MESSAGE_TITLE')")
 </template>
 <script>
 export default {

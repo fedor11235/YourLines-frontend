@@ -1,26 +1,24 @@
 <template lang="pug">
 .payments-info
     .info-header
-        .info-title PAYMENT CARDS
+        .info-title {{$t('PAYMENTS.TITLE')}}
         .info-icon
-        .info-verify Verify
+        .info-verify {{$t('PAYMENTS.VERIFY')}}
     .info-tabs
-        .info-tab(:class="{'info-active': activeTab==='cards'}" @click="activeTab='cards'") Your cards
-        .info-tab(:class="{'info-active': activeTab==='payments'}" @click="activeTab='payments'") Payments
+        .info-tab(:class="{'info-active': activeTab==='cards'}" @click="activeTab='cards'") {{$t('PAYMENTS.HEADER_CARDS')}}
+        .info-tab(:class="{'info-active': activeTab==='payments'}" @click="activeTab='payments'") {{$t('PAYMENTS.HEADER_PAYMENTS')}}
     .info-body
         .info-card(v-if="activeTab==='cards'")
             warning(v-if="!ifCards")
-                | Please 
-                a.info-href(:href="`/payments/card`") add a new card
-                |&nbsp to follow other users or top up your wallet.
+                | {{$t('PAYMENTS.CARD_WARNING_ONE')}} 
+                a.info-href(:href="`/payments/card`") {{$t('PAYMENTS.CARD_WARNING_TWO')}}
+                |&nbsp {{$t('PAYMENTS.CARD_WARNING_THREE')}}
             .info-payment(v-if="activeTab==='payments'")
             br
-            .info-text We fully comply with the data security standards of the payment card industry.
+            .info-text {{$t('PAYMENTS.CARD_SECURITY')}}
         .info-history(v-if="activeTab==='payments'")
             img.info-img(v-if="paymentHistory.length === 0" src="@/assets/img/payment.png")
         
-
-
 </template>
 <script>
 import { mapState } from 'vuex';

@@ -1,6 +1,6 @@
 <template lang="pug">
 .user-bookmarks
-    header-feed(title="BOOKMARKS")
+    header-feed(:title="$t('BOOKMARKS.TITLE')")
 </template>
 <script>
 export default {

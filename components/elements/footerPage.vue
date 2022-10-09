@@ -1,20 +1,20 @@
 <template lang="pug">
   .footer-page
-    ul
-      li Help
-      li How it Work
-      li Complaints Policy
-      li Standard Contract between Fan and Creator
-    ul
-      li About
-      li Cookie Notice
-      li Security center
-      li Terms of Service
-    ul
-      li DMCA
-      li how yourLines was created
-      li privacy
-      li Acceptable use policy
+    //- ul
+      //- li {{$t('FOOTER.HELP')}}
+      //- li {{$t('FOOTER.HOW')}}
+      //- li {{$t('FOOTER.COMPLAINTS_POLICY')}}
+      //- li {{$t('FOOTER.CONTRACT_FAN_CREATOR')}}
+    //- ul
+      //- li {{$t('FOOTER.ABOUT')}}
+      //- li {{$t('FOOTER.COOKIE_NOTICE')}}
+      //- li {{$t('FOOTER.SECURITY_CENTER')}}
+      //- li {{$t('FOOTER.TERMS_SERVICE')}}
+    //- ul
+      //- li {{$t('FOOTER.DMCA')}}
+      //- li {{$t('FOOTER.WAS_CREATED')}}
+      //- li {{$t('FOOTER.PRIVACY')}}
+      //- li {{$t('FOOTER.ACCEPTABLE_POLICY')}}
 </template>
 <script>
 export default {

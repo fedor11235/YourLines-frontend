@@ -5,18 +5,6 @@
     settings-edit-language
 </template>
 
-<script>
-import { mapState } from 'vuex'
-export default {
-    // layout: 'standartPage'
-    computed: {
-    ...mapState({
-        page: state => state.page
-    })
-    }
-}
-</script>
-
 <style lang="scss" scoped>
 .settings-language {
     height: 100vh;

@@ -1,51 +1,48 @@
 <template lang="pug">
-.help
-    .help-header
-        .help-logo-title Questions and answers
-    .help-scroll
-        .help-search-title Hi how can we help? 
-        input(placeholder="Search").help-search
-    .help-body
-        .help-dropdown
+.cookies
+    .cookies-header
+        .cookies-logo-title Questions and answers
+    .cookies-body
+        .cookies-dropdown
             .dropdown-content
             a
             a
             a
-        .help-info
-            .help-title Looking for help?
-            .help-underline
+        .cookies-info
+            .cookies-title Looking for cookies?
+            .cookies-underline
             .horizontal-divider
-            .help-text Explore our Help Center and Community Guidelines below.
+            .cookies-text Explore our cookies Center and Community Guidelines below.
             .horizontal-divider
 
-            .help-title Main questions
-            .help-underline
+            .cookies-title Main questions
+            .cookies-underline
             .horizontal-divider
-            .help-text General questions and requests among the most frequently asked
+            .cookies-text General questions and requests among the most frequently asked
             .horizontal-divider
             information There were no questions yet, the community is young, but it is actively being conducted, you can ask directly in the feedback form!
             .horizontal-divider
-            .help-bottom Ask a Question
+            .cookies-bottom Ask a Question
             .horizontal-divider
 
-            .help-title Questions from fans
-            .help-underline
+            .cookies-title Questions from fans
+            .cookies-underline
             .horizontal-divider
-            .help-text Learn how to become a real fan
+            .cookies-text Learn how to become a real fan
             .horizontal-divider
             information There were no questions yet, the community is young, but it is actively being conducted, you can ask directly in the feedback form!
             .horizontal-divider
-            .help-bottom Ask a Question
+            .cookies-bottom Ask a Question
             .horizontal-divider
 
-            .help-title Author's questions            
-            .help-underline
+            .cookies-title Author's questions            
+            .cookies-underline
             .horizontal-divider
-            .help-text Everything you need to know so you can use the YourLines platform as a professional model
+            .cookies-text Everything you need to know so you can use the YourLines platform as a professional model
             .horizontal-divider
             information There were no questions yet, the community is young, but it is actively being conducted, you can ask directly in the feedback form!
             .horizontal-divider
-            .help-bottom Ask a Question
+            .cookies-bottom Ask a Question
             .horizontal-divider
 
     //- footer-page
@@ -63,8 +60,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.help {
-    .help-header {
+.cookies {
+    .cookies-header {
         position: sticky;
         display: flex;
         align-content: center;
@@ -74,7 +71,7 @@ export default {
         height: 56px;
         z-index: 99;
         top: 0;
-        .help-logo-title {
+        .cookies-logo-title {
             display: flex;
             align-content: center;
             align-items: center;
@@ -85,7 +82,7 @@ export default {
             color: #fefefe;
         }
     }
-    .help-scroll {
+    .cookies-scroll {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -95,7 +92,7 @@ export default {
         padding-top: 35px;
         padding-bottom: 25px;
         padding: 35px 64px;
-        .help-search-title {
+        .cookies-search-title {
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -106,7 +103,7 @@ export default {
             color: #fefefe;
         }
 
-        .help-search {
+        .cookies-search {
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -129,21 +126,21 @@ export default {
             }
         }
     }
-    .help-body {
+    .cookies-body {
         height: 100%;
         padding: 64px;
-        .help-dropdown {
+        .cookies-dropdown {
             height: 100%;
             background-color: #fdfdfd;
         }
-        .help-info {
+        .cookies-info {
             padding-top: 32px;
             padding: 16px;
-            .help-title {
+            .cookies-title {
                 font-size: 32px;
                 font-weight: 700;
             }
-            .help-underline {
+            .cookies-underline {
                 margin-top: 21px;
                 width: 64px;
                 height: 4px;
@@ -152,7 +149,7 @@ export default {
                 opacity: .5;
                 border-radius: 2px;
             }
-            .help-bottom {
+            .cookies-bottom {
                 display: flex;
                 align-items: center;
                 justify-content: center;

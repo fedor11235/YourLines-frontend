@@ -1,6 +1,6 @@
 <template lang="pug">
 .messages-search
-    header-feed(title="Select a user to add a message to them")
+    header-feed(:title="$t('MESSAGES.SELECT_USER')")
 </template>
 <script>
 export default {

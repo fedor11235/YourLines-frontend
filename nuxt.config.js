@@ -39,7 +39,8 @@ export default {
     '~plugins/services',
     '~plugins/libraries',
     '~plugins/router',
-    '~plugins/components'
+    '~plugins/components',
+    '~plugins/settings'
   ],
 
   buildModules: [
@@ -69,7 +70,7 @@ export default {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       alwaysRedirect: false,
-      fallbackLocale: 'ru'
+      fallbackLocale: 'en'
     },
     // paths: {
     //   en: '/',

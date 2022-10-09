@@ -1,8 +1,8 @@
 <template lang="pug">
 .settings-edit-notifications
-    header-feed(title="Editing Notifications")
+    header-feed(:title="$t('SETTINGS.NOTIFICATIONS_TITLE')")
     .edit-notifications-info
-        .edit-notifications-title Preferences
+        .edit-notifications-title {{$t('SETTINGS.NOTIFICATIONS_SUBTITLE')}}
         .edit-notifications-checkbox
 </template>
 <script>

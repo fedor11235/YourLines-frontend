@@ -1,7 +1,7 @@
 <template lang="pug">
 .messages-choises 
-    .choises-header Select any conversation or send a new message
-    .choises-button(@click="$router.push('/messages/new')") A new message
+    .choises-header {{$t('MESSAGES.CHOISES_HEADER')}}
+    .choises-button(@click="$router.push('/messages/new')") {{$t('MESSAGES.NEW_MESSAGE')}}
 </template>
 <script>
 export default {
@@ -36,7 +36,6 @@ export default {
       font-size: 18px;
       color: #fdfdfd;
       transition: all 200ms ease;
-      // border: 1px solid #8a96a3;
       &:hover {
         background-color: #7a92ef;
       }

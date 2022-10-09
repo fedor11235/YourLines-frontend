@@ -1,7 +1,7 @@
 <template lang="pug">
 .header-creator
     .creator-header
-        .creator-title creator
+        .creator-title {{$t('CREATOR.TITLE')}}
         .creator-information(@click="$router.push('/verification')")
     hr.creator-separate
 </template>

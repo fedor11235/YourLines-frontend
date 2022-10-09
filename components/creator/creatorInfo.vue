@@ -3,39 +3,39 @@
     header-creator
     .creator-info-body
         warning(v-if="!approved")
-            | Your account has not been approved.
+            | {{$t('CREATOR.TEXTS.1')}}
             .creator-info-delmiter
-            | We are unable to accept your recent referral application:
+            | {{$t('CREATOR.TEXTS.2')}}
             .creator-info-delmiter
-            | - An additional form of ID is currently required (preferably: foreign passport with English letters)
+            | {{$t('CREATOR.TEXTS.3')}}
             .creator-info-delmiter
-            | . Please note the possible requirements that must be met for ANY uploaded photo:
+            | {{$t('CREATOR.TEXTS.4')}}
             .creator-info-delmiter
-            | 1. Images cannot be cropped or resized;
+            | {{$t('CREATOR.TEXTS.5')}}
             .creator-info-delmiter
-            | 2. All images must be in color;
+            | {{$t('CREATOR.TEXTS.6')}}
             .creator-info-delmiter
-            | 3. The proposed documents must be in the form of photographs or scanned copies. Electronic documents or photographs photographs will
+            | {{$t('CREATOR.TEXTS.7')}}
             .creator-info-delmiter
-            | deviations.
+            | {{$t('CREATOR.TEXTS.8')}}
             .creator-info-delmiter
-            | 4. All 4 documents must be kept;
+            | {{$t('CREATOR.TEXTS.9')}}
             .creator-info-delmiter
-            | 5. All issued, unexpired ID must be presented. No parts of the document can be edited,
+            | {{$t('CREATOR.TEXTS.10')}}
             .creator-info-delmiter
-            | closed, cut or censored;
+            | {{$t('CREATOR.TEXTS.11')}}
             .creator-info-delmiter
-            | 6. Files must be in .PNG or .JPG format and no larger than 7 MB;
+            | {{$t('CREATOR.TEXTS.12')}}
             .creator-info-delmiter
-            | Please note: If the documents you submit are not covered by ALL of the templates above, your application will not be
+            | {{$t('CREATOR.TEXTS.13')}}
             .creator-info-delmiter
-            | processed and additional documents will be requested. This review keeps your applications for 24-48 hours.
+            | {{$t('CREATOR.TEXTS.14')}}
             .creator-info-delmiter
-            | Thank you!
+            | {{$t('CREATOR.TEXTS.15')}}
         .creator-info-delmiter
-        information(v-if="!approved") We recommend using a mobile device or a device with a camera to perform this verification step
+        information(v-if="!approved") {{$t('CREATOR.RECOMMEND')}}
         .creator-info-delmiter
-        button.creator-info-button(@click="$router.push('/verification')") Full check
+        button.creator-info-button(@click="$router.push('/verification')") {{$t('CREATOR.CHECK')}}
         .creator-info-delmiter
 
 

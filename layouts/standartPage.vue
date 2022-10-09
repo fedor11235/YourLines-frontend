@@ -1,7 +1,7 @@
 <template lang="pug">
 .standart-page
   nuxt
-  footer-page
+  //- footer-page
 </template>
 <script>
 export default {

@@ -7,11 +7,11 @@
             .profile-nickname {{nickname}}
             .profile-link {{link}}
             .profile-item {{description}}
-            .profile-more(v-if="crowded") show more information
+            .profile-more(v-if="crowded") {{$t('PROFILE.MORE')}}
     .profile-posts
         .profile-tabs
-            .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") Posts
-            .profile-tab(:class="{'profile-active': activeTab==='media'}" @click="activeTab='media'") Media
+            .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
+            .profile-tab(:class="{'profile-active': activeTab==='media'}" @click="activeTab='media'") {{$t('PROFILE.MEDIA')}}
         .profile-body
             .profile-item(v-for="(post, index) in posts" :key="index")
                 input.profile-upload-file(type="file" @change="handlerUploadImage(post._id)" :id="`fileInput-${post._id}`" accept="image/*")

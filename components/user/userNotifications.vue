@@ -1,7 +1,7 @@
 <template lang="pug">
 .user-notifications
     //- header-feed(title="Notifications" settings=true link='/settings/notifications')
-    header-feed(title="NOTIFICATIONS")
+    header-feed(:title="$t('NOTIFICATIONS.TITLE')")
 </template>
 <script>
 export default {

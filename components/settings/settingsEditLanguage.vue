@@ -2,14 +2,14 @@
 .settings-edit-language
     header-feed(title="Language editing")
     .edit-language-info
-        .edit-language-title Change the language
+        .edit-language-title {{$t('SETTINGS.LANGUAGE_TITLE')}}
         .edit-language-radios(v-for="(local, index) in locales" :key="index")
-            input.edit-language-radio(type="radio" :value="local.code" v-model="languageActive" placeholder="nickname" :id="`contact-${local.code}`")
+            input.edit-language-radio(type="radio" :value="local.code" v-model="language" placeholder="nickname" :id="`contact-${local.code}`")
             label.edit-language-text(:for="`contact-${local.code}`") {{local.name}}
             .edit-language-delmiter
         .edit-language-delmiter
         .edit-language-position
-            .edit-language-button(v-if="languageActive!==languageOldActive" @click="handleSave") Save
+            .edit-language-button(v-if="language!==languageOldActive" @click="handleSave") Save
 
 </template>
 <script>
@@ -21,13 +21,24 @@ export default {
             locales: []
         }
     },
+    computed: {
+        language: {
+            get() {
+                return this.$store.state.language
+            },
+            set(val) {
+                this.$store.commit('CHANGE_LANGUAGE', val)
+            }
+        }
+    },
     mounted() {
+        this.languageOldActive = this.language
         this.locales = this.$i18n.locales.slice()
     },
     methods: {
         handleSave() {
-            this.languageOldActive = this.languageActive
-            this.$i18n.setLocale(this.languageActive)
+            this.languageOldActive = this.language
+            this.$i18n.setLocale(this.language)
         }
     }
 }

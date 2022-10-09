@@ -9,8 +9,8 @@ export const state = () => ({
         money: 0,
         approved: false
     },
-    posts: [],
-    page: 'profile'
+    language: '',
+    posts: []
 })
 
 export const getters = {
@@ -18,8 +18,8 @@ export const getters = {
 
 export const mutations = {
     // Operations with users
-    PAGE_CHANGE(state, page) {
-        state.page = page
+    CHANGE_LANGUAGE(state, language) {
+        state.language = language
     },
 
     // Operations with users

@@ -1,17 +1,17 @@
 <template lang="pug">
 .user-settings
-    header-feed(title="Settings")
+    header-feed(:title="$t('SETTINGS.TITLE')")
     .settings-feed
         .settings-nickname
             .settings-link {{nickname}}
         .settings-property(@click="$router.push('/settings/profile')")
-            | Profile Account
+            | {{$t('SETTINGS.PROFILE')}}
             .settings-arrow
         .settings-property(@click="$router.push('/settings/account')")
-            | Account
+            | {{$t('SETTINGS.ACCOUNT')}}
             .settings-arrow
         .settings-property(@click="$router.push('/settings/language')")
-            | Language
+            | {{$t('SETTINGS.LANGUAGE')}}
             .settings-arrow
 </template>
 <script>

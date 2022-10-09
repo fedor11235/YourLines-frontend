@@ -2,7 +2,7 @@
 .settings-edit-account
     header-feed(title="Account editing")
     .edit-account-info
-        .edit-account-title Account Information
+        .edit-account-title {{$t('SETTINGS.ACCOUNT_INFORMATION')}}
         input-label(v-model="nicknameSave" placeholder="nickname")
         .horizontal-divider
         input-label(v-model="emailSave" placeholder="email")
@@ -10,16 +10,16 @@
         input-label(v-model="passwordSave" placeholder="phone number")
         .horizontal-divider
 
-        .edit-account-title Safety
-        .edit-account-botton(v-if="!createPassword" @click="createPassword=true") Create a new password
-        .edit-account-botton(v-if="createPassword" @click="createPassword=false") Cancel creating a new password
+        .edit-account-title {{$t('SETTINGS.SAFETY')}}
+        .edit-account-botton(v-if="!createPassword" @click="createPassword=true") {{$t('SETTINGS.CREATE_PASSWORD')}}
+        .edit-account-botton(v-if="createPassword" @click="createPassword=false") {{$t('SETTINGS.CANCEL_PASSWORD')}}
         input-label(v-if="createPassword" v-model="passwordNew" placeholder="password")
         .horizontal-divider
         input-label(v-if="createPassword" v-model="passwordСonfirm" placeholder="password")
         .horizontal-divider
 
-        .edit-account-title Account Management
-        .edit-account-botton Delete your account
+        .edit-account-title {{$t('SETTINGS.ACCOUNT_MANAGEMENT')}}
+        .edit-account-botton {{$t('SETTINGS.DELETE_YOUR_ACCOUNT')}}
 </template>
 <script>
 import { mapState } from 'vuex'

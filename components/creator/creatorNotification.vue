@@ -1,9 +1,9 @@
 <template lang="pug">
 .creator-notification
     .creator-notification-history
-        .creator-notification-title START EARNING
+        .creator-notification-title {{$t('CREATOR.HISTORY_TITLE')}}
         .creator-notification-no-payments(v-if="paymentHistory.length === 0")
-            .creator-notification-payments-title Verify your account to be able to set up Banking and Subscription price.
+            .creator-notification-payments-title {{$t('CREATOR.HISTORY_NO')}}
             img.creator-notification-img(src="@/assets/img/bank.png")
 </template>
 <script>

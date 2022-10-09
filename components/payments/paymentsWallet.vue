@@ -2,15 +2,15 @@
 .payments-wallet
     .wallet-score
         .wallet-money ${{money}}
-        .wallet-header Wallet Credits
+        .wallet-header {{$t('PAYMENTS.WALLET_HEADER')}}
         hr.wallet-delmiter
-        .wallet-title ADD FUNDS TO YOUR WALLET
-        a.wallet-button(href="/payments/card") ADD FUNDS TO YOUR WALLET
+        .wallet-title {{$t('PAYMENTS.WALLET_ADD')}}
+        a.wallet-button(href="/payments/card") {{$t('PAYMENTS.WALLET_ADD')}}
         br
     .wallet-history
-        .wallet-title LATEST TRANSACTIONS
+        .wallet-title {{$t('PAYMENTS.WALLET_LATEST')}}
         .wallet-no-payments(v-if="paymentHistory.length === 0")
-            .wallet-payments-title Payments have not yet been made.
+            .wallet-payments-title {{$t('PAYMENTS.WALLET_NO')}}
             img.wallet-img(src="@/assets/img/payment.png")
 </template>
 <script>

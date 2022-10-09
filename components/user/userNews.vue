@@ -2,9 +2,9 @@
 .user-news
     .news-input
         .news-icon
-        input.news-search(placeholder="user search")
+        input.news-search(:placeholder="$t('NEWS.HEADER_PLACEHOLDER')")
     .news-suggestions
-        .news-title Suggestions
+        .news-title {{$t('NEWS.TITLE')}}
     .news-body
 </template>
 <script>
@@ -57,6 +57,9 @@ export default {
     .news-body {
         overflow-y: scroll;
         height: 100%;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
     }
 }
 </style>

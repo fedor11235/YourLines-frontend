@@ -4,8 +4,8 @@
     .create-created(ref="post-created")
         .create-header
             .create-undo(v-if="header || image" @click="handlerUndo")
-            .create-title Home
-            button.create-save(v-if="header || image" @click="handlerSavePost") Post
+            .create-title {{$t('HOME.TITLE')}}
+            button.create-save(v-if="header || image" @click="handlerSavePost") {{$t('HOME.SAVE_POST')}}
         hr.create-separate
         .create-input(ref="post-input" @input="handlerInput" placeholder="Create new post" contenteditable)
         .create-toolbar

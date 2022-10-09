@@ -1,12 +1,12 @@
 <template lang="pug">
 .header-payments
     .payments-header
-        .payments-title PAYMENT CARDS
+        .payments-title {{$t('TOOLBAR.POST')}}
         .payments-icon
-        .payments-verify Verify
+        .payments-verify {{$t('TOOLBAR.POST')}}
     .payments-tabs
-        .payments-tab(:class="{'profile-active': activeTab==='cards'}" @click="activeTab='cards'") Your cards
-        .payments-tab(:class="{'profile-active': activeTab==='payments'}" @click="activeTab='payments'") Payments
+        .payments-tab(:class="{'profile-active': activeTab==='cards'}" @click="activeTab='cards'") {{$t('PAYMENTS.HEADER_CARDS')}}
+        .payments-tab(:class="{'profile-active': activeTab==='payments'}" @click="activeTab='payments'") {{$t('PAYMENTS.HEADER_PAYMENTS')}}
     hr.payments-separate
 </template>
 <script>

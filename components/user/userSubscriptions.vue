@@ -1,10 +1,10 @@
 <template lang="pug">
 .user-subscriptions
-    header-feed(title="SUBSCRIPTIONS")
+    header-feed(:title="$t('SUBSCRIPTIONS.TITLE')")
     .subscriptions-input
         .subscriptions-cansel(v-if="serachMode" @click="serachMode=false")
-        .subscriptions-text(v-if="!serachMode" @click="serachMode=true") Search
-        input.subscriptions-search(v-if="serachMode" v-model="serachSubscriptions" placeholder="user search")
+        .subscriptions-text(v-if="!serachMode" @click="serachMode=true") {{$t('SUBSCRIPTIONS.SEARCH')}}
+        input.subscriptions-search(v-if="serachMode" v-model="serachSubscriptions" :placeholder="$t('SUBSCRIPTIONS.TITLE')")
         .subscriptions-icon(v-if="!serachMode" @click="serachMode=true")
 </template>
 <script>
