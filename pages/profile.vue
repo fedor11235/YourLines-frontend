@@ -2,6 +2,7 @@
 .profile
   user-toolbar
   user-profile
+  modal-help
 </template>
 
 <script>

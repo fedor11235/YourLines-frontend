@@ -49,6 +49,7 @@
             .horizontal-divider
 
     //- footer-page
+    modal-help
 </template>
 
 <script>

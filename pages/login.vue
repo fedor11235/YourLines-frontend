@@ -2,6 +2,7 @@
 .login
   login-cover
   login-form
+  modal-help
 </template>
 
 <script>

@@ -28,7 +28,7 @@
             .verification-button-dis I disagree
             .vertical-divider
             .verification-button-agr I agree
-        
+    modal-help    
 
 </template>
 <script>

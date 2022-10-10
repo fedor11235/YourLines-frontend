@@ -3,6 +3,7 @@
     user-toolbar
     user-settings
     settings-edit-notifications
+    modal-help
 </template>
 
 <script>

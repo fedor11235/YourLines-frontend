@@ -3,6 +3,7 @@
     user-toolbar
     user-settings
     settings-edit-account
+    modal-help
 </template>
 
 <script>

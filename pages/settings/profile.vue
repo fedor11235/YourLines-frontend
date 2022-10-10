@@ -3,6 +3,7 @@
     user-toolbar
     user-settings
     settings-edit-profile
+    modal-help
 </template>
 
 <script>

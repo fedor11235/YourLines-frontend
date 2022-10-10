@@ -2,6 +2,7 @@
 .subscriptions
   user-toolbar
   user-subscriptions
+  modal-help
 </template>
 
 <script>

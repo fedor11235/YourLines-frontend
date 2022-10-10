@@ -3,6 +3,7 @@
     user-toolbar
     user-settings
     settings-edit-language
+    modal-help
 </template>
 
 <style lang="scss" scoped>

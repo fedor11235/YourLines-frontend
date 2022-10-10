@@ -2,8 +2,8 @@
 .card
     user-toolbar
     payments-add-card
-    payments-Wallet
-
+    payments-wallet
+    modal-help
 </template>
 
 <script>

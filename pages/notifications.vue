@@ -3,6 +3,7 @@
   user-toolbar
   user-notifications
   user-news
+  modal-help
 </template>
 
 <script>

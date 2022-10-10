@@ -3,6 +3,7 @@
     user-toolbar
     messages-new
     messages-search
+    modal-help
 </template>
 
 <script>

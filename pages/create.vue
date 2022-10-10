@@ -3,6 +3,7 @@
   user-toolbar
   user-new-post
   user-news
+  modal-help
 </template>
 
 <script>

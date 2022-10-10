@@ -3,6 +3,7 @@
     user-toolbar
     creator-info
     creator-notification
+    modal-help
 
 </template>
 

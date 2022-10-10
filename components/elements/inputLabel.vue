@@ -40,7 +40,7 @@ export default {
         position: absolute;
         transform-origin: 0 50%;
         transition: transform 200ms, color 200ms;
-        top: 10px;
+        top: 8px;
     }
 
     .input:focus ~ .placeholder,

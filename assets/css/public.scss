@@ -32,11 +32,6 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  li {
-    &:not(:last-of-type) {
-      // margin-bottom: 13px;
-    }
-  }
 }
 
 a {
@@ -69,22 +64,4 @@ hr {
   @include max(768) {
     display: none;
   }
-}
-
-.has-pseudo-scroll {
-  max-width: calc(100vw - 9px);
-  &:after {
-    content: '';
-    display: block;
-    background: rgba(0, 0, 0, 0.15);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 9px;
-  }
-}
-
-.p-0 {
-  padding: 0 !important;
 }

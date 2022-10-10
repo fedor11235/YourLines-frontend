@@ -3,6 +3,7 @@
   user-toolbar
   user-home
   user-news
+  modal-help
 </template>
 
 <script>
@@ -24,5 +25,10 @@ export default {
   background-color: transparent;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
+  modal-help {
+    position: fixed;
+    top: 50%;
+    right: 0;
+  }
 }
 </style>

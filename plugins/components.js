@@ -11,6 +11,8 @@ import headerCreator from '@/components/elements/headerCreator'
 import warning from '@/components/elements/warning'
 import information from '@/components/elements/information'
 import inputLabel from '@/components/elements/inputLabel'
+import modalHelp from '@/components/elements/modalHelp'
+import popover from '@/components/elements/popover'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -56,6 +58,8 @@ export default () => {
   Vue.component('warning', warning)
   Vue.component('information', information)
   Vue.component('input-label', inputLabel)
+  Vue.component('modal-help', modalHelp)
+  Vue.component('popover', popover)
 
   Vue.component('creator-info', creatorInfo)
   Vue.component('creator-notification', creatorNotification)

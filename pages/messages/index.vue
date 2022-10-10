@@ -3,6 +3,7 @@
     user-toolbar
     user-messages
     messages-choises
+    modal-help
 
 </template>
 

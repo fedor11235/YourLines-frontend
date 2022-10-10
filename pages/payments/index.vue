@@ -2,7 +2,8 @@
 .messages
     user-toolbar
     payments-info
-    payments-Wallet
+    payments-wallet
+    modal-help
 
 </template>
 
