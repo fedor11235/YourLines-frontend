@@ -13,6 +13,13 @@ body {
   line-height: 24px;
 }
 
+textarea::placeholder {
+  font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', 'Fira Sans', Roboto,
+    Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
 .scroll {
   overflow-y: scroll;
   &::-webkit-scrollbar {

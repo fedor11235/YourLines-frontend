@@ -9,7 +9,7 @@
             .help-question {{$t('HELP.QUESTION')}}
         .help-body
             .help-wrap
-                textarea.help-input(tabindex="0" ref="textarea")
+                textarea.help-input(tabindex="0" ref="textarea" :placeholder="$t('HELP.SEND')")
             .help-send
 </template>
 <script>
@@ -27,7 +27,7 @@ export default {
         },
         handlerOpen() {
             this.ifOpen = true
-            this.$refs.textarea.style.height = '18px'
+            this.$refs.textarea.style.height = '24px'
             this.$refs.textarea.addEventListener('keydown', this.handlerHeightChange)
         },
         handlerClose() {
@@ -134,7 +134,7 @@ export default {
             .help-send {
                 position: absolute;
                 right: 16px;
-                bottom: 20px;
+                bottom: 24px;
                 width: 20px;
                 height: 20px;
                 background-size: cover;

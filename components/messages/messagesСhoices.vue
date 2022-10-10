@@ -24,10 +24,10 @@ export default {
         text-align: center;
     }
     .choises-button {
-        margin-top: 8px;
+      margin-top: 8px;
       display: flex;
       align-items: center;
-    justify-content: center;
+      justify-content: center;
       background-color: #a0b9f1;
       border-radius: 1000px;
       width: 180px;

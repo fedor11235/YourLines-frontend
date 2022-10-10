@@ -103,7 +103,8 @@
 
     "HELP": {
         "HELLO": "Hello!",
-        "QUESTION": "Have a question? Write to us"
+        "QUESTION": "Have a question? Write to us",
+        "SEND": "Send a message..."
     },
 
     "TOOLBAR": {
