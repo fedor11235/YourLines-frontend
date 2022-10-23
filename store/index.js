@@ -1,5 +1,6 @@
 export const state = () => ({
     user: {
+        id: '',
         email: '',
         nickname: 'None',
         description: 'None',
@@ -9,6 +10,7 @@ export const state = () => ({
         money: 0,
         approved: false
     },
+    token: '',
     language: '',
     posts: []
 })
@@ -20,6 +22,11 @@ export const mutations = {
     // Operations with users
     CHANGE_LANGUAGE(state, language) {
         state.language = language
+    },
+
+
+    ADD_TOKEN(state, token) {
+        state.token = token
     },
 
     // Operations with users

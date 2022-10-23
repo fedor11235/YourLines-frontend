@@ -6,6 +6,13 @@
     modal-help
 </template>
 
+<script>
+import authorized from '@/mixins/authorized'
+export default {
+  mixins: [authorized],
+}
+</script>
+
 <style lang="scss" scoped>
 .settings-language {
     height: 100vh;

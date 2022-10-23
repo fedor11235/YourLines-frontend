@@ -1,7 +1,5 @@
 import Vue from 'vue'
 
-import standartPage from '@/layouts/standartPage'
-
 import footerPage from '@/components/elements/footerPage'
 import headerFeed from '@/components/elements/headerFeed'
 import toolbarItem from '@/components/elements/toolbarItem'
@@ -47,7 +45,6 @@ import userToolbar from '@/components/user/userToolbar'
 
 
 export default () => {
-  Vue.component('standart-page', standartPage)
 
   Vue.component('footer-page', footerPage)
   Vue.component('header-feed', headerFeed)

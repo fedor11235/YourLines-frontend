@@ -8,12 +8,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import authorized from '@/mixins/authorized'
 export default {
-    // layout: 'standartPage'
-    computed: {
-    ...mapState({
-        page: state => state.page
-    })
+  mixins: [authorized],
+        computed: {
+        ...mapState({
+            page: state => state.page
+        })
     }
 }
 </script>

@@ -24,8 +24,9 @@ export default {
     async handlerLogin() {
       const emailValid = this.emailVerification()
       if(emailValid) {
-        const response = await this.$authService.userLogin({login: this.email, password: this.password})
-        if (response) {
+        await this.$authService.userLogin({login: this.email, password: this.password})
+        const user = await this.$authService.userGet()
+        if (user) {
           this.$router.push('/home')
           // this.$nuxt.$router.replace({ path: '/main '})
           return

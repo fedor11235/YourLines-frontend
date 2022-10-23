@@ -12,6 +12,11 @@ export default api => ({
       formData.append('login', login)
       formData.append('password', password)
       return api.$post('/api/auth/registry', formData)
+    },
+    userGet(token) {
+      let formData = new FormData()
+      formData.append('token', token)
+      return api.$post('/api/auth/user', formData)
     }
   })
   

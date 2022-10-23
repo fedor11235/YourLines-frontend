@@ -1,25 +1,34 @@
 export default ctx => ({
   async userLogin(payload) {
-    let response
     try {
-      response = await ctx.$authApi.userLogin(payload)
-      window.localStorage.setItem('login', response.user)
-      return response.login
+      const response = await ctx.$authApi.userLogin(payload)
+      window.localStorage.setItem('token', response.token)
     } catch (e) {
       console.error('user info unavailable', e)
     }
   },
   async userRegistry(payload) {
-    let response
     try {
-      response = await ctx.$authApi.userRegistry(payload)
+      const response = await ctx.$authApi.userRegistry(payload)
       window.localStorage.setItem('login', response.user)
-      return response.registry
+      return response
+    } catch (e) {
+      console.error('user info unavailable', e)
+    }
+  },
+  async userGet() {
+    try {
+      const token = window.localStorage.getItem('token')
+      if(token) {
+        const user = await ctx.$authApi.userGet(token)
+        ctx.store.commit('USER_SAVE_DATA', user)
+        return user
+      }
     } catch (e) {
       console.error('user info unavailable', e)
     }
   },
   async userLogout() {
-    localStorage.removeItem(process.env.dev.cookieKey)
+    localStorage.removeItem('token')
   },
 })

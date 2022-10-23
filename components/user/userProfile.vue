@@ -41,17 +41,21 @@ export default {
         crowded: false,
         activeTab: 'posts',
         modeEdit: false,
-        posts: [],
+        posts: [{
+            _id: '111',
+            header: 'Типо заголовок!!',
+            modeEdit: false,
+            image: ''
+        }],
         changedPosts: []
     }
   },
   async mounted() {
-    const respons = await this.$postsService.postsGetAll()
-    this.posts = respons.posts.map(post => {
-        post.modeEdit = false
-        return post
-    })
-    console.log(this.posts)
+    // const respons = await this.$postsService.postsGetAll()
+    // this.posts = respons.posts.map(post => {
+    //     post.modeEdit = false
+    //     return post
+    // })
   },
   computed: {
     ...mapState({

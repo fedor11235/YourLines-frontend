@@ -3,8 +3,10 @@
   ul
     li
       .toolbar-avatar
+    
     li(@click="$router.push('/home')") 
-      toolbar-item(icon="home" :label="$t('TOOLBAR.HOME')")
+      popover(text="this home")
+        toolbar-item(icon="home" :label="$t('TOOLBAR.HOME')")
     li(@click="$router.push('/notifications')")
       toolbar-item(icon="notifications" :label="$t('TOOLBAR.NOTIFICATION')")
     li(@click="$router.push('/messages')")
@@ -29,12 +31,16 @@
       li(@click="$router.push('/settings/language')")
         toolbar-item(icon="language" :label="$t('TOOLBAR.LANGUAGE')")
     li 
-      button.toolbar-post(@click="$router.push('/create')" :class="{'toolbar-active': page === 'new-post'}") 
+      button.toolbar-post(@click="$router.push('/create')") 
         .toolbar-textpost {{$t('TOOLBAR.POST')}}
+
+    li 
+      button.toolbar-post(@click="handlerExit") 
+        .toolbar-textpost Выход
 
 </template>
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -47,9 +53,10 @@ export default {
     })
   },
   methods: {
-    ...mapMutations({
-      pageChange: 'PAGE_CHANGE'
-    })
+    handlerExit() {
+      this.$authService.userLogout()
+      this.$router.push('login')
+    }
   }
 }
 </script>

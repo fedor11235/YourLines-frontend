@@ -53,7 +53,9 @@
 </template>
 
 <script>
+import authorized from '@/mixins/authorized'
 export default {
+  mixins: [authorized],
     mounted() {
         document.body.classList.add('scroll')
     },

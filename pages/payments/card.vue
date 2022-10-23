@@ -7,8 +7,10 @@
 </template>
 
 <script>
+import authorized from '@/mixins/authorized'
 export default {
-    name: 'page-messages'
+  mixins: [authorized],
+    name: 'page-messages',
 }
 </script>
 

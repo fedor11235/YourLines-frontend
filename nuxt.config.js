@@ -1,6 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 const env = require('./env')
+// const auth = require('./auth')
 
 export default {
   head: {
@@ -55,7 +56,8 @@ export default {
         proxy: true
       }
     ],
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    // '@nuxtjs/auth-next'
   ],
   proxy: {
     '/api': {
@@ -65,6 +67,10 @@ export default {
     },
   },
 
+  // router: {
+  //   middleware: ['auth']
+  // },
+
   i18n: {
     detectBrowserLanguage: {
       useCookie: true,
@@ -72,10 +78,6 @@ export default {
       alwaysRedirect: false,
       fallbackLocale: 'en'
     },
-    // paths: {
-    //   en: '/',
-    //   ru: '/',
-    // },
     locales: [
       {
         code: 'en',
@@ -90,12 +92,13 @@ export default {
         name:  'Русский'
       }
     ],
-    // skipSettingLocaleOnNavigate: true,
     lazy: true,
     langDir: 'lang/',
     defaultLocale: 'ru'
   },
 
+  // auth: auth,
+  
   build: {
   },
   // server: {
