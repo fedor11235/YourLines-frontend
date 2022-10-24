@@ -3,7 +3,14 @@ export default ctx => ({
       let response
       try {
         response = await ctx.$postsApi.postsGetAll()
-        window.localStorage.setItem('posts', response)
+        return response
+      } catch (e) {
+        console.error('posts info unavailable', e)
+      }
+    },
+    async postsGetUserAll() {
+      try {
+        const response = await ctx.$postsApi.postsGetUserAll(ctx.store.state.user.id)
         return response
       } catch (e) {
         console.error('posts info unavailable', e)
@@ -12,7 +19,8 @@ export default ctx => ({
     async postAdd(payload) {
         let response
         try {
-          await ctx.$postsApi.postAdd(payload)
+          console.log(ctx.store.state.user.id)
+          await ctx.$postsApi.postAdd(payload, ctx.store.state.user.id)
           // TODO add store
           // window.localStorage.setItem('posts', response)
           return response

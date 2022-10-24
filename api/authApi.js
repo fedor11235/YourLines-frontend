@@ -13,10 +13,25 @@ export default api => ({
       formData.append('password', password)
       return api.$post('/api/auth/registry', formData)
     },
-    userGet(token) {
-      let formData = new FormData()
-      formData.append('token', token)
-      return api.$post('/api/auth/user', formData)
+    userGet() {
+      return api.$get('/api/auth/user')
+    },
+    userRefreshToken() {
+      return api.$get('/api/auth/refresh')
+    },
+    userLogout() {
+      return api.$delete('/api/auth/logout')
+    },
+
+    //Authorization through social networks
+    userLoginGoogle() {
+      return api.$get('/api/auth/google')
+    },
+    userLoginTwitter() {
+      return api.$get('/api/auth/twitter')
+    },
+    userLoginInstagram() {
+      return api.$get('/api/auth/instagram')
     }
   })
   

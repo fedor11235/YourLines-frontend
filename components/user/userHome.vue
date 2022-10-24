@@ -16,6 +16,11 @@
         .post-preview(v-if="image")
             .post-delete(@click="handlerDeleteImage")
             img.post-resurse(:src="image")
+    .post-body
+        .post(v-for="(post, index) in posts" :key="index")
+            .post-header-pub  {{post.header}}
+            img(v-if="post.image" :src="convertBuffToBlob(post.image)")
+            .post-description {{post.description}}
 </template>
 <script>
 export default {
@@ -23,13 +28,24 @@ export default {
         return {
             header: null,
             image: null,
+            posts: [],
+            test: null
         }
     },
+    async mounted() {
+        const respons = await this.$postsService.postsGetAll()
+        this.posts = respons.posts
+        console.log(this.posts, 'posts')
+    },
     methods: {
+        convertBuffToBlob(imageBuff) {
+            return Buffer.from(imageBuff, "base64")
+        },
         handlerInput(e) {
             this.header = e.target.innerText
         },
         async handlerSavePost() {
+            console.log(this.image)
             await this.$postsService.postAdd({image: this.image, header: this.header})
             this.image = null
             this.header = null
@@ -187,6 +203,13 @@ export default {
             .post-resurse{
                 width: 100px;
             }
+        }
+    }
+    .post-body {
+        padding-top:14px;
+        .post {
+            background-color: #fdfdfd;
+            margin: 8px 0;
         }
     }
 }

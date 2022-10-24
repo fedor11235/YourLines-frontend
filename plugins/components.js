@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import footerPage from '@/components/elements/footerPage'
+import postProfile from '@/components/elements/postProfile'
 import headerFeed from '@/components/elements/headerFeed'
 import toolbarItem from '@/components/elements/toolbarItem'
 import headerMessages from '@/components/elements/headerMessages'
@@ -47,6 +48,7 @@ import userToolbar from '@/components/user/userToolbar'
 export default () => {
 
   Vue.component('footer-page', footerPage)
+  Vue.component('post-profile', postProfile)
   Vue.component('header-feed', headerFeed)
   Vue.component('header-messages', headerMessages)
   Vue.component('header-payments', headerPayments)

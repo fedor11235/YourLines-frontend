@@ -17,4 +17,14 @@ export default ({ $axios, app, res, $store }, inject) => {
       app.store.commit('ADD_TOKEN', '')
     }
   })
+
+  $axios.onError(async error => {
+    const status = error.response ? error.response.status : null
+    if (status === 401) {
+      const token = window.localStorage.getItem('token')
+      if(token) {
+        await app.$authService.userRefreshToken()
+      }
+    }
+  })
 }

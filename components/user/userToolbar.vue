@@ -33,10 +33,12 @@
     li 
       button.toolbar-post(@click="$router.push('/create')") 
         .toolbar-textpost {{$t('TOOLBAR.POST')}}
-
     li 
       button.toolbar-post(@click="handlerExit") 
         .toolbar-textpost Выход
+    li 
+      button.toolbar-post(@click="handlerRefresh") 
+        .toolbar-textpost Тест обновления токена
 
 </template>
 <script>
@@ -56,6 +58,9 @@ export default {
     handlerExit() {
       this.$authService.userLogout()
       this.$router.push('login')
+    },
+    handlerRefresh() {
+      this.$authService.userRefreshToken()
     }
   }
 }

@@ -8,8 +8,9 @@
       input.form-control(type='password', v-model="password" name='{:password}' placeholder='Password')
     button.button.button-blue(type='submit' @click="handlerLogin") Log-in
     button.button.button-blue(type='submit' @click="handlerRegistry") Registry
-    button.button.outlined(type='submit') Login with google
-    button.button.outlined(type='submit') Login with twitter
+    button.button.outlined(type='submit' @click="handlerLoginGoogle") Login with google
+    button.button.outlined(type='submit' @click="handlerLoginTwitter") Login with twitter
+    button.button.outlined(type='submit' @click="handlerLoginInstagram") Login with instagram
 </template>
 
 <script>
@@ -56,6 +57,17 @@ export default {
         return true
       }
       return false
+    },
+
+    //Authorization through social networks
+    handlerLoginGoogle() {
+      this.$authService.userLoginGoogle()
+    },
+    handlerLoginTwitter() {
+      this.$authService.userLoginTwitter()
+    },
+    handlerLoginInstagram() {
+      this.$authService.userLoginInstagram()
     }
   }
 }

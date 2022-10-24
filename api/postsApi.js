@@ -2,7 +2,10 @@ export default api => ({
     postsGetAll() {
       return api.$get('/api/posts')
     },
-    postAdd(payload) {
+    postsGetUserAll(idUser) {
+      return api.$get(`/api/posts/user/${idUser}`)
+    },
+    postAdd(payload, idUser) {
       const { image, header, description, comments } = payload
       let formData = new FormData()
       if(image) {
@@ -17,7 +20,7 @@ export default api => ({
       if(comments) {
         formData.append('comments', comments)
       }
-      api.$post('/api/posts/add', formData)
+      api.$post(`/api/posts/add/${idUser}`, formData)
     },
     postEdit(payload) {
       const { id, image, header, description, comments } = payload

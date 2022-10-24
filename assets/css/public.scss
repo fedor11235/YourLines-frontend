@@ -1,4 +1,18 @@
 @import 'mixins';
+@font-face {
+  font-family: "HelloKatterine";
+  src: url("@/assets/fonts/HelloKatterine.otf") format("opentype");
+  }
+// new design style
+.logo {
+  font-family: 'HelloKatterine';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100vh;
+  line-height: 100vh;
+  line-height: 397px;
+  color: #000000;
+}
 
 body {
   margin: 0;
@@ -6,7 +20,7 @@ body {
   font-size: 16px;
   overflow-y: hidden;
   font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', 'Fira Sans', Roboto,
-    Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif !important;
+    Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif;
   font-weight: 400;
   color: #1a1a1a;
   background-color: $light-gray;

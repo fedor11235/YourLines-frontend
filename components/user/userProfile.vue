@@ -13,24 +13,7 @@
             .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
             .profile-tab(:class="{'profile-active': activeTab==='media'}" @click="activeTab='media'") {{$t('PROFILE.MEDIA')}}
         .profile-body
-            .profile-item(v-for="(post, index) in posts" :key="index")
-                input.profile-upload-file(type="file" @change="handlerUploadImage(post._id)" :id="`fileInput-${post._id}`" accept="image/*")
-                .profile-redaction
-                    .profile-preview
-                    .profile-specification
-                        .profile-preview-nickname {{nickname}}
-                        .profile-preview-link {{link}}
-                    .profile-edit(v-if="!post.modeEdit" @click="post.modeEdit=true")
-                    .profile-save(v-if="post.modeEdit" @click="post.modeEdit=false")
-                    .profile-delete
-                .profile-banner-header
-                    .profile-banner(v-if="!post.modeEdit") {{post.header}}
-                    input.profile-input-banner(v-if="post.modeEdit" v-model="post.header")
-                    .profile-delete-description(v-if="post.modeEdit && post.header" @click="post.header=''")
-                    .profile-upload(v-if="post.modeEdit && !post.image" @click="handlerOpenInput(post._id)")
-                .profile-picture(v-if="post.image")
-                    img.profile-img( :src="post.image")
-                    .profile-delete-img(v-if="post.modeEdit" @click="handlerDeleteImage(post._id)")
+            post-profile(v-for="(post, index) in posts" :key="index" :item="post")
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -41,21 +24,16 @@ export default {
         crowded: false,
         activeTab: 'posts',
         modeEdit: false,
-        posts: [{
-            _id: '111',
-            header: 'Типо заголовок!!',
-            modeEdit: false,
-            image: ''
-        }],
+        posts: [],
         changedPosts: []
     }
   },
-  async mounted() {
-    // const respons = await this.$postsService.postsGetAll()
-    // this.posts = respons.posts.map(post => {
-    //     post.modeEdit = false
-    //     return post
-    // })
+  async created() {
+    const respons = await this.$postsService.postsGetUserAll()
+    this.posts = respons.posts.map(post => {
+        post.modeEdit = false
+        return post
+    })
   },
   computed: {
     ...mapState({
@@ -65,6 +43,9 @@ export default {
     })
   },
   methods: {
+    convertBuffToBlob(imageBuff) {
+        return Buffer.from(imageBuff, "base64")
+    },
     handlerUploadImage(id) {
         const fileInput = document.getElementById(`fileInput-${id}`)
         const reader = new FileReader()
@@ -180,194 +161,6 @@ export default {
             }
         }
         .profile-body {
-            .profile-upload-file {
-                display: none;
-                visibility: hidden;
-                width: 0;
-                height: 0;
-            }
-            .profile-item {
-                background-color: #fdfdfd;
-                margin-bottom: 4px;
-                .profile-redaction {
-                    position: relative;
-                    height: 60px;
-                    .profile-preview {
-                        position: absolute;
-                        top: 6px;
-                        left: 16px;
-                        height: 48px;
-                        width: 48px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/avatar.png);
-                        background-size: 50% 50%;
-                        background-color: #f2f2f2;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        z-index: 2;
-                    }
-
-                    .profile-specification {
-                        position: absolute;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        height: 100%;
-                        left: 82px;
-                        .profile-preview-nickname {
-                            font-size: 16px;
-                        }
-                        .profile-preview-link {
-                            font-size: 14px;
-                            color: #8a96a3;
-                        }
-                    }
-                    .profile-edit {
-                        position: absolute;
-                        top: 12px;
-                        right: 58px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/edit.png);
-                        background-size: 50% 50%;
-                        background-color: #a0b9f1;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        cursor: pointer;
-                        &:hover {
-                            background-color: #7a92ef;
-                        }
-                    }
-                    .profile-save {
-                        position: absolute;
-                        top: 12px;
-                        right: 58px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/save.png);
-                        background-size: 50% 50%;
-                        background-color: #a0f1ab;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        transition: all 200ms ease;
-                        cursor: pointer;
-                        &:hover {
-                            background-color: #7aef9d;
-                        }
-                        &:active {
-                            transform: scale(0.975);
-                        }
-                    }
-                    .profile-delete {
-                        position: absolute;
-                        top: 12px;
-                        right: 16px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/delete.png);
-                        background-size: 50% 50%;
-                        background-color: #eb8c8c;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        transition: all 200ms ease;
-                        cursor: pointer;
-                        &:hover {
-                            background-color: #e74848;
-                        }
-                        &:active {
-                            transform: scale(0.975);
-                        }
-                    }
-                }
-                .profile-banner-header {
-                    position: relative;
-                    .profile-banner {
-                        padding: 16px
-                    }
-                    .profile-input-banner {
-                        font-family: 'Inter', 'Helvetica Neue', 'Segoe UI', 'Fira Sans', Roboto, Oxygen, Ubuntu, 'Droid Sans', 'Arial', sans-serif !important;
-                        padding: 16px;
-                        font-size: 16px;
-                        line-height: 24px;
-                        border: 0;
-                        color: #7a92ef;
-                    }
-                    .profile-delete-description {
-                        position: absolute;
-                        top: 10px;
-                        right: 16px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/delete.png);
-                        background-size: 50% 50%;
-                        background-color: #f2f2f2;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        cursor: pointer;
-                        transition: all 200ms ease;
-                        &:hover {
-                            background-color: #ebebeb;;
-                        }
-                        &:active {
-                            transform: scale(0.975);
-                        }
-                    }
-
-                    .profile-upload {
-                        position: absolute;
-                        top: 10px;
-                        right: 56px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/add-file.png);
-                        background-size: 50% 50%;
-                        background-color: #f2f2f2;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        cursor: pointer;
-                        transition: all 200ms ease;
-                        &:hover {
-                            background-color: #ebebeb;;
-                        }
-                        &:active {
-                            transform: scale(0.975);
-                        }  
-                    }
-                }
-                .profile-picture {
-                    position: relative;
-                    width: 100%;
-                    .profile-img {
-                        width: 100%;
-                    }
-                    .profile-delete-img {
-                        position: absolute;
-                        top: 16px;
-                        right: 16px;
-                        height: 32px;
-                        width: 32px;
-                        border-radius: 50%;
-                        background-image: url(@/assets/img/delete.png);
-                        background-size: 50% 50%;
-                        background-color: #f2f2f2;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        cursor: pointer;
-                        transition: all 200ms ease;
-                        &:hover {
-                            background-color: #ebebeb;;
-                        }
-                        &:active {
-                            transform: scale(0.975);
-                        }
-                    }
-                }
-            }
         }
     }
 }
