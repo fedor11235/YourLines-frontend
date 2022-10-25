@@ -21,6 +21,7 @@ export default ctx => ({
     try {
       const user = await ctx.$authApi.userGet()
       ctx.store.commit('USER_SAVE_DATA', user)
+      window.localStorage.setItem('userId', user.id)
       return user
     } catch (e) {
       console.error('user info unavailable', e)
@@ -40,7 +41,8 @@ export default ctx => ({
   async userLogout() {
     try {
       await ctx.$authApi.userLogout() 
-      localStorage.removeItem('token')
+      window.localStorage.removeItem('token')
+      window.localStorage.removeItem('userId')
       //TODO привести стор в дефолтное состояние
     } catch (e) {
       console.error('user info unavailable', e)

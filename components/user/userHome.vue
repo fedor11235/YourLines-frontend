@@ -17,10 +17,7 @@
             .post-delete(@click="handlerDeleteImage")
             img.post-resurse(:src="image")
     .post-body
-        .post(v-for="(post, index) in posts" :key="index")
-            .post-header-pub  {{post.header}}
-            img(v-if="post.image" :src="convertBuffToBlob(post.image)")
-            .post-description {{post.description}}
+        post-home(v-for="(post, index) in posts" :key="index" :item="post")
 </template>
 <script>
 export default {
@@ -74,6 +71,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .user-home {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
     .post-upload {
         display: none;
         visibility: hidden;
@@ -206,11 +207,6 @@ export default {
         }
     }
     .post-body {
-        padding-top:14px;
-        .post {
-            background-color: #fdfdfd;
-            margin: 8px 0;
-        }
     }
 }
 </style>

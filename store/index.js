@@ -1,10 +1,15 @@
 export const state = () => ({
     user: {
         id: '',
+        headerImage: '',
+        avatar: '',
         email: '',
-        nickname: 'None',
-        description: 'None',
-        link: 'None',
+        nickname: '',
+        description: '',
+        link: '',
+        wishList: '',
+        location: '',
+        websiteURL: '',
         idCards: false,
         paymentHistory: [],
         money: 0,

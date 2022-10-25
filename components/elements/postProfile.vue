@@ -17,6 +17,9 @@
     .post-picture(v-if="item.image")
         img.post-img( :src="convertBuffToBlob(item.image)")
         .post-delete-img(v-if="item.modeEdit" @click="handlerDeleteImage(item._id)")
+    .post-action
+        .post-like
+        .post-comments
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -244,6 +247,41 @@ export default {
             }
             &:active {
                 transform: scale(0.975);
+            }
+        }
+    }
+    
+   .post-action{
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px;
+        .post-like {
+            cursor: pointer;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            background-image: url(@/assets/img/like.png);
+            transition: all 200ms ease;
+            &:hover {
+                background-color: #f2f2f2;
+            }
+        }
+        .post-comments {
+            margin-left: 8px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70% 70%;
+            background-image: url(@/assets/img/comments.png);
+            transition: all 200ms ease;
+            &:hover {
+                background-color: #f2f2f2;
             }
         }
     }

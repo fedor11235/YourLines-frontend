@@ -86,3 +86,28 @@ hr {
     display: none;
   }
 }
+
+.toolbar-post {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #a0b9f1;
+  border-radius: 1000px;
+  margin-left: -21px;
+  width: 180px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fdfdfd;
+  transition: all 200ms ease;
+  &:hover {
+    background-color: #7a92ef;
+  }
+  &:active {
+    transform: scale(0.975);
+  }
+  &.toolbar-active {
+    background-color: #f2f2f2;
+    color: rgba(0, 0, 0, 0.9);
+  }
+}

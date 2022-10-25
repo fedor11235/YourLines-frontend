@@ -10,7 +10,8 @@ export default ctx => ({
     },
     async postsGetUserAll() {
       try {
-        const response = await ctx.$postsApi.postsGetUserAll(ctx.store.state.user.id)
+        const useriD = window.localStorage.getItem('userId')
+        const response = await ctx.$postsApi.postsGetUserAll(useriD)
         return response
       } catch (e) {
         console.error('posts info unavailable', e)
@@ -19,8 +20,8 @@ export default ctx => ({
     async postAdd(payload) {
         let response
         try {
-          console.log(ctx.store.state.user.id)
-          await ctx.$postsApi.postAdd(payload, ctx.store.state.user.id)
+          const useriD = window.localStorage.getItem('userId')
+          await ctx.$postsApi.postAdd(payload, useriD)
           // TODO add store
           // window.localStorage.setItem('posts', response)
           return response

@@ -1,6 +1,6 @@
 <template lang="pug">
 .input-label
-    input.input(id="lastname" placeholder=" ")
+    input.input(v-model="valueData" id="lastname" placeholder=" ")
     label.placeholder(for="lastname") {{placeholder}}
 </template>
 <script>
@@ -9,6 +9,24 @@ export default {
         placeholder: {
             type: String,
             required: true
+        },
+        valueProp: {
+            type: String | Number,
+            required: true
+        }
+    },
+    data() {
+        return {
+            valueData: ''
+        }
+    },
+    mounted() {
+        console.log(this.valueProp)
+        this.valueData = this.valueProp
+    },
+    watch: {
+        valueData(val){
+            this.$emit('changeInput', val)
         }
     }
 }

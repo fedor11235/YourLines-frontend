@@ -28,7 +28,7 @@ export default {
         changedPosts: []
     }
   },
-  async created() {
+  async mounted() {
     const respons = await this.$postsService.postsGetUserAll()
     this.posts = respons.posts.map(post => {
         post.modeEdit = false
