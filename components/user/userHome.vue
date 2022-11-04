@@ -32,7 +32,6 @@ export default {
     async mounted() {
         const respons = await this.$postsService.postsGetAll()
         this.posts = respons.posts
-        console.log(this.posts, 'posts')
     },
     methods: {
         convertBuffToBlob(imageBuff) {
@@ -42,7 +41,6 @@ export default {
             this.header = e.target.innerText
         },
         async handlerSavePost() {
-            console.log(this.image)
             await this.$postsService.postAdd({image: this.image, header: this.header})
             this.image = null
             this.header = null

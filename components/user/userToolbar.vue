@@ -3,6 +3,7 @@
   ul
     li
       .toolbar-avatar
+        img.toolbar-avatar-img(v-if="userAvatar" :src="userAvatar")
     
     li(@click="$router.push('/home')") 
       popover(text="this home")
@@ -42,7 +43,7 @@
 
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -50,9 +51,7 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      page: state => state.page
-    })
+    ...mapGetters(['userAvatar'])
   },
   methods: {
     handlerExit() {
@@ -84,6 +83,7 @@ export default {
       color: rgba(0, 0, 0, 0.9);
     }
     .toolbar-avatar {
+      position: relative;
       width: 42px;
       height: 42px;
       margin-left: -26px;
@@ -97,6 +97,12 @@ export default {
       // transition: all 200ms ease;
       &:hover {
         border: 1px solid rgba(0, 0, 0, 0.9);
+      }
+      .toolbar-avatar-img {
+        position: absolute;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
       }
     }
   }

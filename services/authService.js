@@ -17,23 +17,13 @@ export default ctx => ({
       console.error('user info unavailable', e)
     }
   },
-  async userGet() {
-    try {
-      const user = await ctx.$authApi.userGet()
-      ctx.store.commit('USER_SAVE_DATA', user)
-      window.localStorage.setItem('userId', user.id)
-      return user
-    } catch (e) {
-      console.error('user info unavailable', e)
-    }
-  },
   async userRefreshToken() {
     try {
       const token = await ctx.$authApi.userRefreshToken() 
       if (token) {
         window.localStorage.setItem('token', token)
       }
-      await this.userGet()
+      await this.userService()
     } catch (e) {
       console.error('user info unavailable', e)
     }

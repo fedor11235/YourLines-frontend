@@ -1,11 +1,11 @@
 import authApi from '../api/authApi'
 import postsApi from '../api/postsApi'
-import editUserApi from '../api/editUserApi'
+import userApi from '../api/userApi'
 
 export default ({ $axios, app, res, $store }, inject) => {
   inject('authApi', authApi($axios))
   inject('postsApi', postsApi($axios))
-  inject('editUserApi', editUserApi($axios))
+  inject('userApi', userApi($axios))
 
   $axios.onRequest(config => {
     const token = localStorage.getItem('token')

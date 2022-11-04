@@ -13,9 +13,6 @@ export default api => ({
       formData.append('password', password)
       return api.$post('/api/auth/registry', formData)
     },
-    userGet() {
-      return api.$get('/api/auth/user')
-    },
     userRefreshToken() {
       return api.$get('/api/auth/refresh')
     },

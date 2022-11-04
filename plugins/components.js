@@ -13,6 +13,7 @@ import information from '@/components/elements/information'
 import inputLabel from '@/components/elements/inputLabel'
 import modalHelp from '@/components/elements/modalHelp'
 import popover from '@/components/elements/popover'
+import suggestions from '@/components/elements/suggestions'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -44,6 +45,7 @@ import userProfile from '@/components/user/userProfile'
 import userSettings from '@/components/user/userSettings'
 import userSubscriptions from '@/components/user/userSubscriptions'
 import userToolbar from '@/components/user/userToolbar'
+import userAnotherProfile from '@/components/user/userAnotherProfile'
 
 
 export default () => {
@@ -61,6 +63,7 @@ export default () => {
   Vue.component('input-label', inputLabel)
   Vue.component('modal-help', modalHelp)
   Vue.component('popover', popover)
+  Vue.component('suggestions', suggestions)
 
   Vue.component('creator-info', creatorInfo)
   Vue.component('creator-notification', creatorNotification)
@@ -92,4 +95,5 @@ export default () => {
   Vue.component('user-settings', userSettings)
   Vue.component('user-subscriptions', userSubscriptions)
   Vue.component('user-toolbar', userToolbar)
+  Vue.component('user-another-toolbar', userAnotherProfile)
 }

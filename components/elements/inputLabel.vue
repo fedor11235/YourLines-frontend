@@ -21,7 +21,6 @@ export default {
         }
     },
     mounted() {
-        console.log(this.valueProp)
         this.valueData = this.valueProp
     },
     watch: {

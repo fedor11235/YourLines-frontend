@@ -41,7 +41,7 @@ export default {
     computed: {
         headerImage: {
             get() {
-                return this.$store.state.user.headerImage
+                return this.$store.getters.userHeaderImage
             },
             set(val) {
                 this.$store.commit('USER_SAVE_DATA', {headerImage: val})
@@ -49,7 +49,7 @@ export default {
         },
         avatar: {
             get() {
-                return this.$store.state.user.avatar
+                return this.$store.getters.userAvatar
             },
             set(val) {
                 this.$store.commit('USER_SAVE_DATA', {avatar: val})
@@ -131,7 +131,8 @@ export default {
         handlerDeleteAvatar(){
             this.avatar = ''
         },
-        handlerSave(){
+        async handlerSave(){
+            await this.$userService.editUser()
         },
     }
 }

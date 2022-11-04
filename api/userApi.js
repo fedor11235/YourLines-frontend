@@ -1,17 +1,20 @@
 export default api => ({
+    userGet() {
+      return api.$get('/api/user')
+    },
     editUser(payload, id) {
       const { nickname, link, description, webSite, wishList, avatar, headerImage } = payload
       let formData = new FormData()
       if(nickname) {
         formData.append('nickname', nickname)
       }
-      if(header) {
+      if(link) {
         formData.append('link', link)
       }
       if(description) {
         formData.append('description', description)
       }
-      if(comments) {
+      if(webSite) {
         formData.append('webSite', webSite)
       }
       if(wishList) {
@@ -23,7 +26,13 @@ export default api => ({
       if(headerImage) {
         formData.append('headerImage', headerImage)
       }
-      api.$post(`/api/user/${id}`, formData) 
+      return api.$put(`/api/user/${id}`, formData) 
+    },
+    getAllUsers() {
+      return api.$get('/api/user/all')
+    },
+    getUsersByLink(link) {
+      return api.$get(`/api/user/link/${link}`)
     }
 })
   

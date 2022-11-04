@@ -15,12 +15,40 @@ export const state = () => ({
         money: 0,
         approved: false
     },
+    userEdit: {
+        id: '',
+        headerImage: '',
+        avatar: '',
+        email: '',
+        nickname: '',
+        description: '',
+        link: '',
+        wishList: '',
+        location: '',
+        websiteURL: '',
+        idCards: false,
+        paymentHistory: [],
+        money: 0,
+        approved: false
+    },
     token: '',
     language: '',
     posts: []
 })
 
 export const getters = {
+    userAvatar: state =>  {
+        if (typeof state.user.avatar === 'object' && typeof state.user.avatar !== null) {
+            return Buffer.from(state.user.avatar, "base64")
+        }
+        return state.user.avatar
+    },
+    userHeaderImage: state =>  {
+        if (typeof state.user.headerImage === 'object' && typeof state.user.avatar !== null) {
+            return Buffer.from(state.user.headerImage, "base64")
+        }
+        return state.user.headerImage
+    }
 }
 
 export const mutations = {
