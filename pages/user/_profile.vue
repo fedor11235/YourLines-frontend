@@ -1,7 +1,7 @@
 <template lang="pug">
 .profile
   user-toolbar
-  user-another-profile
+  user-another-profile(:user="user")
   modal-help
 </template>
 

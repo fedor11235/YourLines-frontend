@@ -95,5 +95,5 @@ export default () => {
   Vue.component('user-settings', userSettings)
   Vue.component('user-subscriptions', userSubscriptions)
   Vue.component('user-toolbar', userToolbar)
-  Vue.component('user-another-toolbar', userAnotherProfile)
+  Vue.component('user-another-profile', userAnotherProfile)
 }

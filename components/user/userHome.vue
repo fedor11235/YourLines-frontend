@@ -1,70 +1,75 @@
 <template lang="pug">
 .user-home
-    input.post-upload(type="file" @change="handlerUploadImage" ref="fileInput" accept="image/*")
-    .post-created(ref="post-created")
-        .post-header
-            .post-undo(v-if="header || image" @click="handlerUndo")
-            .post-title {{$t('HOME.TITLE')}}
-            button.post-save(v-if="header || image" @click="handlerSavePost") {{$t('HOME.SAVE_POST')}}
-        hr.post-separate
-        .post-input(ref="post-input" @input="handlerInput" placeholder="Create new post" contenteditable)
-        .post-toolbar
-            .post-icon
-                .post-image(@click="handlerOpenInput")
-            .post-icon
-                .post-interview
-        .post-preview(v-if="image")
-            .post-delete(@click="handlerDeleteImage")
-            img.post-resurse(:src="image")
-    .post-body
-        post-home(v-for="(post, index) in posts" :key="index" :item="post")
+  input.post-upload(type="file" @change="handlerUploadImage" ref="fileInput" accept="image/*")
+  .post-created(ref="post-created")
+    .post-header
+      .post-undo(v-if="header || image" @click="handlerUndo")
+      .post-title {{$t('HOME.TITLE')}}
+      button.post-save(v-if="header || image" @click="handlerSavePost") {{$t('HOME.SAVE_POST')}}
+    hr.post-separate
+    .post-input(ref="post-input" @input="handlerInput" placeholder="Create new post" contenteditable)
+    .post-toolbar
+      .post-icon
+        .post-image(@click="handlerOpenInput")
+      .post-icon
+        .post-interview
+    .post-preview(v-if="image")
+        .post-delete(@click="handlerDeleteImage")
+        img.post-resurse(:src="image")
+  .post-body
+      post-home(
+        v-for="(post, index) in posts" 
+        :key="index" 
+        :image="post.image"
+        :avatar="post.user.avatar"
+        :nickname="post.user.nickname"
+        :link="post.user.link"
+        :header="post.header"
+        )
 </template>
 <script>
 export default {
-    data() {
-        return {
-            header: null,
-            image: null,
-            posts: [],
-            test: null
-        }
-    },
-    async mounted() {
-        const respons = await this.$postsService.postsGetAll()
-        this.posts = respons.posts
-    },
-    methods: {
-        convertBuffToBlob(imageBuff) {
-            return Buffer.from(imageBuff, "base64")
-        },
-        handlerInput(e) {
-            this.header = e.target.innerText
-        },
-        async handlerSavePost() {
-            await this.$postsService.postAdd({image: this.image, header: this.header})
-            this.image = null
-            this.header = null
-            this.$refs['post-input'].innerText = ''
-        },
-        handlerOpenInput() {
-            this.$refs.fileInput.click()
-        },
-        handlerUploadImage() {
-            const reader = new FileReader()
-            reader.readAsDataURL(this.$refs.fileInput.files[0])
-            reader.onload = () => {
-                this.image = reader.result
-            };
-        },
-        handlerUndo() {
-            this.image = null
-            this.header = null
-            this.$refs['post-input'].innerText = ''
-        },
-        handlerDeleteImage() {
-            this.image = null
-        }
+  data() {
+    return {
+      header: null,
+      image: null,
+      posts: [],
+      test: null
     }
+  },
+  async mounted() {
+    const respons = await this.$postsService.postsGetAll()
+    this.posts = respons.posts
+  },
+  methods: {
+    handlerInput(e) {
+      this.header = e.target.innerText
+    },
+    async handlerSavePost() {
+      await this.$postsService.postAdd({image: this.image, header: this.header})
+      this.image = null
+      this.header = null
+      this.$refs['post-input'].innerText = ''
+    },
+    handlerOpenInput() {
+      this.$refs.fileInput.click()
+    },
+    handlerUploadImage() {
+      const reader = new FileReader()
+      reader.readAsDataURL(this.$refs.fileInput.files[0])
+      reader.onload = () => {
+        this.image = reader.result
+      };
+    },
+    handlerUndo() {
+      this.image = null
+      this.header = null
+      this.$refs['post-input'].innerText = ''
+    },
+    handlerDeleteImage() {
+      this.image = null
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

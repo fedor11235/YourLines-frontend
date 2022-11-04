@@ -1,20 +1,20 @@
 <template lang="pug">
 .toolbar-item
-    .item(:style="{backgroundImage: `url(${require(`@/assets/img/${icon}.png`)})`}")
-    | {{label}}
+  .item(:style="{backgroundImage: `url(${require(`@/assets/img/${icon}.png`)})`}")
+  | {{label}}
 </template>
 <script>
 export default {
-    props: {
-        icon: {
-            type: String,
-            required: true
-        },        
-        label: {
-            type: String,
-            required: true
-        }
+  props: {
+    icon: {
+      type: String,
+      required: true
+    },        
+    label: {
+      type: String,
+      required: true
     }
+  }
 }
 </script>
 <style lang="scss" scoped>

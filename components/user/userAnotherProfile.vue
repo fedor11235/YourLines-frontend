@@ -1,67 +1,42 @@
 <template lang="pug">
 .user-profile
-    .profile-header
-        .profile-feed
-            .profile-avatar
-        .profile-info
-            .profile-nickname {{nickname}}
-            .profile-link {{link}}
-            .profile-item {{description}}
-            .profile-more(v-if="crowded") {{$t('PROFILE.MORE')}}
-    .profile-posts
-        .profile-tabs
-            .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
-            .profile-tab(:class="{'profile-active': activeTab==='media'}" @click="activeTab='media'") {{$t('PROFILE.MEDIA')}}
-        .profile-body
-            post-profile(v-for="(post, index) in posts" :key="index" :item="post")
+  .profile-header
+    .profile-feed
+      .profile-avatar
+    .profile-info
+      .profile-nickname {{user.nickname}}
+      .profile-link {{user.link}}
+      .profile-item {{user.description}}
+      .profile-more(v-if="crowded") {{$t('PROFILE.MORE')}}
+  .profile-posts
+    .profile-tabs
+      .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
+      .profile-tab(:class="{'profile-active': activeTab==='media'}" @click="activeTab='media'") {{$t('PROFILE.MEDIA')}}
+    .profile-body
+      post-home(
+        v-for="(post, index) in user.posts" 
+        :key="index" 
+        :image="post.image"
+        :avatar="user.avatar"
+        :nickname="user.nickname" 
+        :link="user.link" 
+        :header="post.header"
+      )
 </template>
 <script>
-import { mapState } from 'vuex'
 export default {
-  props: {},
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       crowded: false,
       activeTab: 'posts',
       modeEdit: false,
-      posts: [],
       changedPosts: []
-    }
-  },
-  async mounted() {
-  const respons = await this.$postsService.postsGetUserAll()
-  this.posts = respons.posts.map(post => {
-    post.modeEdit = false
-    return post
-    })
-  },
-  computed: {
-  ...mapState({
-    description: state => state.user.description,
-    nickname: state => state.user.nickname,
-    link: state => state.user.link
-  })
-  },
-  methods: {
-    convertBuffToBlob(imageBuff) {
-      return Buffer.from(imageBuff, "base64")
-    },
-    handlerUploadImage(id) {
-      const fileInput = document.getElementById(`fileInput-${id}`)
-      const reader = new FileReader()
-      reader.readAsDataURL(fileInput.files[0])
-      reader.onload = () => {
-        const post = this.posts.find(post => post._id === id)
-        post.image = reader.result
-      };
-    },
-    handlerOpenInput(id) {
-      const fileInput = document.getElementById(`fileInput-${id}`)
-      fileInput.click()
-    },
-    handlerDeleteImage(id) {
-      const post = this.posts.find(post => post._id === id)
-      post.image = null
     }
   }
 }

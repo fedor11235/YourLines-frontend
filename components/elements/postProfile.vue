@@ -24,41 +24,41 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-    props: {
-        item: {
-            type: Object,
-            required: true
-        }
-    },
-    computed: {
-    ...mapState({
-        description: state => state.user.description,
-        nickname: state => state.user.nickname,
-        link: state => state.user.link
-    })
-    },
-    methods: {
-        convertBuffToBlob(imageBuff) {
-            return Buffer.from(imageBuff, "base64")
-        },
-        handlerUploadImage(id) {
-            const fileInput = document.getElementById(`fileInput-${id}`)
-            const reader = new FileReader()
-            reader.readAsDataURL(fileInput.files[0])
-            reader.onload = () => {
-                const post = this.posts.find(post => post._id === id)
-                post.image = reader.result
-            };
-        },
-        handlerOpenInput(id) {
-            const fileInput = document.getElementById(`fileInput-${id}`)
-            fileInput.click()
-        },
-        handlerDeleteImage(id) {
-            const post = this.posts.find(post => post._id === id)
-            post.image = null
-        }
+  props: {
+    item: {
+      type: Object,
+      required: true
     }
+  },
+  computed: {
+  ...mapState({
+      description: state => state.user.description,
+      nickname: state => state.user.nickname,
+      link: state => state.user.link
+    })
+  },
+  methods: {
+    convertBuffToBlob(imageBuff) {
+      return Buffer.from(imageBuff, "base64")
+    },
+    handlerUploadImage(id) {
+      const fileInput = document.getElementById(`fileInput-${id}`)
+      const reader = new FileReader()
+      reader.readAsDataURL(fileInput.files[0])
+      reader.onload = () => {
+        const post = this.posts.find(post => post._id === id)
+        post.image = reader.result
+      };
+    },
+    handlerOpenInput(id) {
+      const fileInput = document.getElementById(`fileInput-${id}`)
+      fileInput.click()
+    },
+    handlerDeleteImage(id) {
+      const post = this.posts.find(post => post._id === id)
+      post.image = null
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

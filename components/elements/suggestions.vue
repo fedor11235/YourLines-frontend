@@ -9,17 +9,13 @@
 </template>
 <script>
 import bufferToBase64 from '@/mixins/bufferToBase64'
+import handlerOpenLink from '@/mixins/handlerOpenLink'
 export default {
-  mixins: [bufferToBase64],
+  mixins: [bufferToBase64, handlerOpenLink],
   props: {
     user: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    handlerOpenLink(link) {
-      this.$router.push(link)
     }
   }
 }
