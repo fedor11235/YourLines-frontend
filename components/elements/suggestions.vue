@@ -32,15 +32,22 @@ export default {
     height: 128px;
     border-radius: 6px;
     object-fit: cover;
+    background-image: url(@/assets/img/test-header.jpeg);
+    background-size: cover;
   }
   .suggestions-avatar {
     position:absolute;
     top: 14px;
     left: 14px;
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    border: 4px solid white;
+    outline: 4px solid white;
+    background-image: url(@/assets/img/avatar.png);
+    background-size: 50% 50%;
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .suggestions-info {
     position:absolute;

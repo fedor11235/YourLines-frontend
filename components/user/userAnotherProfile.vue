@@ -1,13 +1,14 @@
 <template lang="pug">
 .user-profile
   .profile-header
-    .profile-feed
-      .profile-avatar
+    .profile-feed(:style="setHeaderImage")
+      .profile-avatar(:style="setAvatarImage")
     .profile-info
       .profile-nickname {{user.nickname}}
       .profile-link {{user.link}}
       .profile-item {{user.description}}
       .profile-more(v-if="crowded") {{$t('PROFILE.MORE')}}
+      .profile-subscribe Подписаться
   .profile-posts
     .profile-tabs
       .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
@@ -21,14 +22,37 @@
         :nickname="user.nickname" 
         :link="user.link" 
         :header="post.header"
+        :date="post.createdAt"
+        :idPost="post.id"
+        :idUser="user.id"
       )
 </template>
 <script>
+import bufferToBase64 from '@/mixins/bufferToBase64'
 export default {
+  mixins: [bufferToBase64],
   props: {
     user: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    setHeaderImage() {
+      if (this.user.headerImage) {
+        return {
+          backgroundImage: `url(${this.bufferToBase64(this.user.headerImage)})`, 
+          backgroundSize: 'cover'
+        }
+      }
+    },
+    setAvatarImage() {
+      if (this.user.avatar) {
+        return {
+          backgroundImage: `url(${this.bufferToBase64(this.user.avatar)})`, 
+          backgroundSize: 'cover'
+        }
+      }
     }
   },
   data() {
@@ -99,8 +123,23 @@ export default {
           color: rgba(0, 0, 0, 0.9);
         }
       }
+      .profile-subscribe {
+        background-color: #a0b9f1;
+        color: #fdfdfd;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        margin: 8px 0;
+        padding: 4px 0;
+        width: 108px;
+        &:hover {
+          background-color: #7a92ef;
+        }
+        &:active {
+          transform: scale(0.975);
+        }
+      }
     }
-
   }
   .profile-posts {
     margin-top: 8px;

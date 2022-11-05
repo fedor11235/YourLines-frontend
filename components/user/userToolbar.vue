@@ -4,7 +4,6 @@
     li
       .toolbar-avatar
         img.toolbar-avatar-img(v-if="userAvatar" :src="userAvatar")
-    
     li(@click="$router.push('/home')") 
       popover(text="this home")
         toolbar-item(icon="home" :label="$t('TOOLBAR.HOME')")
@@ -12,8 +11,8 @@
       toolbar-item(icon="notifications" :label="$t('TOOLBAR.NOTIFICATION')")
     li(@click="$router.push('/messages')")
       toolbar-item(icon="messages" :label="$t('TOOLBAR.MESSAGES')")
-    //- li(@click="$router.push('/bookmarks')")
-    //-   toolbar-item(icon="bookmarks" :label="$t('TOOLBAR.BOOKMARKS')")
+    li(@click="$router.push('/bookmarks')")
+      toolbar-item(icon="bookmarks" :label="$t('TOOLBAR.BOOKMARKS')")
     //- li(@click="$router.push('/lists')")
     //-   toolbar-item(icon="lists" :label="$t('TOOLBAR.LISTS')")
     li(@click="$router.push('/subscriptions')")

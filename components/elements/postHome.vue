@@ -10,19 +10,26 @@
     .post-specification
       .post-preview-nickname(@click="handlerOpenLink(link)") {{nickname}}
       .post-preview-link(@click="handlerOpenLink(link)") @{{link}}
+    .post-date {{handlerConvertDate(date)}}
   .post-header {{header}}
   img.post-img(v-if="image" :src="bufferToBase64(image)")
   .post-action
-    .post-like
+    .post-bookmarks(@click="handlerAddBookmarks")
+    .post-like(@click="handlerAddLike")
       .post-like-count
-    .post-comments
+    .post-comments(@click="handlerAddComments")
       .post-comments-count
 </template>
 <script>
 import bufferToBase64 from '@/mixins/bufferToBase64'
 import handlerOpenLink from '@/mixins/handlerOpenLink'
+import handlerConvertDate from '@/mixins/handlerConvertDate'
 export default {
-  mixins: [bufferToBase64, handlerOpenLink],
+  mixins: [
+    bufferToBase64,
+    handlerOpenLink,
+    handlerConvertDate
+  ],
   props: {
     image: {
       type: Object | null,
@@ -44,6 +51,25 @@ export default {
       type: String | null,
       required: true
     },
+    date: {
+      type: String,
+      required: true
+    },
+    idPost: {
+      type: String,
+      required: true
+    },
+    idUser: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    handlerAddBookmarks() {
+      this.$bookmarksService.bookmarkAdd(this.idPost, this.idUser)
+    },
+    handlerAddLike() {},
+    handlerAddComments() {}
   }
 }
 </script>
@@ -89,6 +115,13 @@ export default {
         }
       }
     }
+    .post-date {
+      position: absolute;
+      top: 6px;
+      right: 16px;
+      font-size: 14px;
+      color: #8a96a3;
+    }
   }
   .post-header {
     padding: 16px;
@@ -97,10 +130,29 @@ export default {
     width: 100%;
   }
   .post-action{
-    display: flex;
-    justify-content: flex-end;
-    padding: 16px;
+    position: relative;
+    height: 48px;
+    .post-bookmarks {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60% 60%;
+      background-image: url(@/assets/img/bookmarks.png);
+      transition: all 200ms ease;
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
     .post-like {
+      position: absolute;
+      top: 8px;
+      right: 48px;
       cursor: pointer;
       border-radius: 50%;
       width: 32px;
@@ -115,6 +167,9 @@ export default {
       }
     }
     .post-comments {
+      position: absolute;
+      top: 8px;
+      right: 8px;
       margin-left: 8px;
       cursor: pointer;
       border-radius: 50%;

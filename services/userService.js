@@ -31,5 +31,12 @@ export default ctx => ({
     } catch (e) {
       console.error('user info unavailable', e)
     }
+  },
+  async searchUserByNickname(nickname) {
+    try {
+      return await ctx.$userApi.searchUserByNickname(nickname)
+    } catch (e) {
+      console.error('user info unavailable', e)
+    }
   }
 })

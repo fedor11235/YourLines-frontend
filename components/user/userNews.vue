@@ -2,7 +2,7 @@
 .user-news
   .news-input
     .news-icon
-    input.news-search(:placeholder="$t('NEWS.HEADER_PLACEHOLDER')")
+    input.news-search(v-model="search" :placeholder="$t('NEWS.HEADER_PLACEHOLDER')")
   .news-suggestions
     .news-title {{$t('NEWS.TITLE')}}
   .news-body
@@ -12,7 +12,17 @@
 export default {
   data() {
     return {
+      search: '',
       users: []
+    }
+  },
+  watch: {
+    async search(val) {
+      if (val) {
+        this.users = await this.$userService.searchUserByNickname(val)
+      } else {
+        this.users = await this.$userService.getAllUsers()
+      }
     }
   },
   async created() {

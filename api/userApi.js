@@ -33,6 +33,9 @@ export default api => ({
     },
     getUsersByLink(link) {
       return api.$get(`/api/user/link/${link}`)
+    },
+    searchUserByNickname(nickname) {
+      return api.$get(`/api/user/search/${nickname}`)
     }
 })
   

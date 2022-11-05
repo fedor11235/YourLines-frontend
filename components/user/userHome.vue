@@ -19,12 +19,15 @@
   .post-body
       post-home(
         v-for="(post, index) in posts" 
-        :key="index" 
-        :image="post.image"
-        :avatar="post.user.avatar"
-        :nickname="post.user.nickname"
-        :link="post.user.link"
-        :header="post.header"
+          :key="index" 
+          :image="post.image"
+          :avatar="post.user.avatar"
+          :nickname="post.user.nickname"
+          :link="post.user.link"
+          :header="post.header"
+          :date="post.createdAt"
+          :idPost="post.id"
+          :idUser="post.user.id"
         )
 </template>
 <script>
@@ -40,6 +43,7 @@ export default {
   async mounted() {
     const respons = await this.$postsService.postsGetAll()
     this.posts = respons.posts
+    console.log(this.posts, 'this.posts')
   },
   methods: {
     handlerInput(e) {
