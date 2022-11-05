@@ -15,6 +15,8 @@
       toolbar-item(icon="bookmarks" :label="$t('TOOLBAR.BOOKMARKS')")
     //- li(@click="$router.push('/lists')")
     //-   toolbar-item(icon="lists" :label="$t('TOOLBAR.LISTS')")
+    li(@click="$router.push('/subscribers')")
+      toolbar-item(icon="subscribers" label="Подписчики")
     li(@click="$router.push('/subscriptions')")
       toolbar-item(icon="subscriptions" :label="$t('TOOLBAR.SUBSCRIPTION')")
     li(@click="$router.push('/profile')")

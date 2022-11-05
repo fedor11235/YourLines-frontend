@@ -43,48 +43,48 @@
 <script>
 import { mapState } from 'vuex';
 export default {
-    computed: {
-        ...mapState({
-            approved: state => state.user.approved
-        }),
-    }
+  computed: {
+    ...mapState({
+      approved: state => state.user.approved
+    }),
+  }
 }
 </script>
 <style lang="scss" scoped>
 .creator-info {
-    height: 100vh;
-    background-color: #fdfdfd;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-        width: 0;
+  height: 100vh;
+  background-color: #fdfdfd;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  .creator-info-body {
+    padding: 16px;
+    text-align: right;
+    .creator-info-delmiter {
+      height: 16px;
     }
-    .creator-info-body {
-        padding: 16px;
-        text-align: right;
-        .creator-info-delmiter {
-            height: 16px;
-        }
-        .creator-info-button {
-            position: relative;
-            background-color: #a0b9f1;
-            border-radius: 1000px;
-            width: 180px;
-            height: 48px;
-            cursor: pointer;
-            font-size: 18px;
-            color: #fdfdfd;
-            transition: all 200ms ease;
-            &:hover {
-                background-color: #7a92ef;
-            }
-            &:active {
-                transform: scale(0.975);
-            }
-            &.toolbar-active {
-                background-color: #f2f2f2;
-                color: rgba(0, 0, 0, 0.9);
-            }
-        }
+    .creator-info-button {
+      position: relative;
+      background-color: #a0b9f1;
+      border-radius: 1000px;
+      width: 180px;
+      height: 48px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #fdfdfd;
+      transition: all 200ms ease;
+      &:hover {
+        background-color: #7a92ef;
+      }
+      &:active {
+        transform: scale(0.975);
+      }
+      &.toolbar-active {
+        background-color: #f2f2f2;
+        color: rgba(0, 0, 0, 0.9);
+      }
     }
+  }
 }
 </style>

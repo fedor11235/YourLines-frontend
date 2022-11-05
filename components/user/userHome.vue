@@ -43,7 +43,6 @@ export default {
   async mounted() {
     const respons = await this.$postsService.postsGetAll()
     this.posts = respons.posts
-    console.log(this.posts, 'this.posts')
   },
   methods: {
     handlerInput(e) {

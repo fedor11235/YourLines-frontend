@@ -8,7 +8,9 @@
       .profile-link {{user.link}}
       .profile-item {{user.description}}
       .profile-more(v-if="crowded") {{$t('PROFILE.MORE')}}
-      .profile-subscribe Подписаться
+      .profile-subscribe(v-if="ifSubscribe" @click="handlerUnsubscribe") Отписаться
+      .profile-subscribe(v-else @click="handlerSubscribe") Подписаться
+      .profile-messages(@click="handlerMessages") Написать сообщение
   .profile-posts
     .profile-tabs
       .profile-tab(:class="{'profile-active': activeTab==='posts'}" @click="activeTab='posts'") {{$t('PROFILE.POSTS')}}
@@ -29,6 +31,7 @@
 </template>
 <script>
 import bufferToBase64 from '@/mixins/bufferToBase64'
+import { create } from 'domain'
 export default {
   mixins: [bufferToBase64],
   props: {
@@ -36,6 +39,18 @@ export default {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      crowded: false,
+      activeTab: 'posts',
+      modeEdit: false,
+      changedPosts: [],
+      ifSubscribe: false, 
+    }
+  },
+  async created() {
+    this.ifSubscribe = await this.$subscribeService.check(this.user.id)
   },
   computed: {
     setHeaderImage() {
@@ -55,13 +70,16 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      crowded: false,
-      activeTab: 'posts',
-      modeEdit: false,
-      changedPosts: []
-    }
+  methods: {
+    async handlerSubscribe() {
+      await this.$subscribeService.subscribe(this.user.id)
+      this.ifSubscribe = true
+    },
+    async handlerUnsubscribe() {
+      await this.$subscribeService.unsubscribe(this.user.id)
+      this.ifSubscribe = false
+    },
+    handlerMessages() {}
   }
 }
 </script>
@@ -132,6 +150,22 @@ export default {
         margin: 8px 0;
         padding: 4px 0;
         width: 108px;
+        &:hover {
+          background-color: #7a92ef;
+        }
+        &:active {
+          transform: scale(0.975);
+        }
+      }
+      .profile-messages {
+        background-color: #a0b9f1;
+        color: #fdfdfd;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        margin: 8px 0;
+        padding: 4px 0;
+        width: 208px;
         &:hover {
           background-color: #7a92ef;
         }

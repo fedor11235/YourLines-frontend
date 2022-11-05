@@ -44,6 +44,7 @@ import userNotifications from '@/components/user/userNotifications'
 import userProfile from '@/components/user/userProfile'
 import userSettings from '@/components/user/userSettings'
 import userSubscriptions from '@/components/user/userSubscriptions'
+import userSubscribers from '@/components/user/userSubscribers'
 import userToolbar from '@/components/user/userToolbar'
 import userAnotherProfile from '@/components/user/userAnotherProfile'
 
@@ -94,6 +95,7 @@ export default () => {
   Vue.component('user-profile', userProfile)
   Vue.component('user-settings', userSettings)
   Vue.component('user-subscriptions', userSubscriptions)
+  Vue.component('user-subscribers', userSubscribers)
   Vue.component('user-toolbar', userToolbar)
   Vue.component('user-another-profile', userAnotherProfile)
 }

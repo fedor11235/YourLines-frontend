@@ -34,7 +34,7 @@ export default {
     })
   },
   async mounted() {
-    this.users = await this.$subscribeService.getSubscriptions()
+    this.users = await this.$subscribeService.getSubscribers()
   },
   methods: {
     handlerCloseSearch() {

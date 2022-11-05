@@ -15,6 +15,7 @@
   img.post-img(v-if="image" :src="bufferToBase64(image)")
   .post-action
     .post-bookmarks(@click="handlerAddBookmarks")
+    .post-tips(@click="handlerAddLike")
     .post-like(@click="handlerAddLike")
       .post-like-count
     .post-comments(@click="handlerAddComments")
@@ -144,6 +145,24 @@ export default {
       background-position: center;
       background-size: 60% 60%;
       background-image: url(@/assets/img/bookmarks.png);
+      transition: all 200ms ease;
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+
+    .post-tips {
+      position: absolute;
+      top: 8px;
+      right: 88px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 82% 82%;
+      background-image: url(@/assets/img/tips.png);
       transition: all 200ms ease;
       &:hover {
         background-color: #f2f2f2;
