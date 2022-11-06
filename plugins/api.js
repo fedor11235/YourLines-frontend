@@ -3,6 +3,7 @@ import postsApi from '../api/postsApi'
 import userApi from '../api/userApi'
 import bookmarksApi from '../api/bookmarksApi'
 import subscribeApi from '../api/subscribeApi'
+import messagesApi from '../api/messagesApi'
 
 export default ({ $axios, app, res, $store }, inject) => {
   inject('authApi', authApi($axios))
@@ -10,6 +11,7 @@ export default ({ $axios, app, res, $store }, inject) => {
   inject('userApi', userApi($axios))
   inject('bookmarksApi', bookmarksApi($axios))
   inject('subscribeApi', subscribeApi($axios))
+  inject('messagesApi', messagesApi($axios))
 
   $axios.onRequest(config => {
     const token = localStorage.getItem('token')

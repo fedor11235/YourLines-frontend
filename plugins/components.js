@@ -14,6 +14,7 @@ import inputLabel from '@/components/elements/inputLabel'
 import modalHelp from '@/components/elements/modalHelp'
 import popover from '@/components/elements/popover'
 import suggestions from '@/components/elements/suggestions'
+import message from '@/components/elements/message'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -29,6 +30,7 @@ import settingsEditLanguage from '@/components/settings/settingsEditLanguage'
 import messagesNew from '@/components/messages/messagesNew'
 import messagesSearch from '@/components/messages/messagesSearch'
 import messagesСhoices from '@/components/messages/messagesСhoices'
+import messagesWrite from '@/components/messages/messagesWrite'
 
 import paymentsInfo from '@/components/payments/paymentsInfo'
 import paymentsWallet from '@/components/payments/paymentsWallet'
@@ -65,6 +67,7 @@ export default () => {
   Vue.component('modal-help', modalHelp)
   Vue.component('popover', popover)
   Vue.component('suggestions', suggestions)
+  Vue.component('message', message)
 
   Vue.component('creator-info', creatorInfo)
   Vue.component('creator-notification', creatorNotification)
@@ -80,6 +83,7 @@ export default () => {
   Vue.component('messages-new', messagesNew)
   Vue.component('messages-search', messagesSearch)
   Vue.component('messages-choises', messagesСhoices)
+  Vue.component('messages-write', messagesWrite)
 
   Vue.component('payments-info', paymentsInfo)
   Vue.component('payments-wallet', paymentsWallet)

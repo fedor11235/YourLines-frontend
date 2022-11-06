@@ -57,8 +57,19 @@ export default {
       }
     ],
     '@nuxtjs/i18n',
+    'nuxt-socket-io',
     // '@nuxtjs/auth-next'
   ],
+
+  io: {
+    // module options
+    sockets: [{
+      name: 'chat',
+      url: 'http://localhost:88',
+      default: true,
+    }]
+  },
+
   proxy: {
     '/api': {
       target: 'http://127.0.0.1:3000',
