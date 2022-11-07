@@ -38,13 +38,13 @@ export const state = () => ({
 
 export const getters = {
     userAvatar: state =>  {
-        if (typeof state.user.avatar === 'object' && typeof state.user.avatar !== null) {
+        if (typeof state.user.avatar === 'object' && state.user.avatar !== null) {
             return Buffer.from(state.user.avatar, "base64")
         }
         return state.user.avatar
     },
     userHeaderImage: state =>  {
-        if (typeof state.user.headerImage === 'object' && typeof state.user.avatar !== null) {
+        if (typeof state.user.headerImage === 'object' && state.user.avatar !== null) {
             return Buffer.from(state.user.headerImage, "base64")
         }
         return state.user.headerImage

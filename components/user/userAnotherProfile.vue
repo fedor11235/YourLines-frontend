@@ -31,9 +31,10 @@
 </template>
 <script>
 import bufferToBase64 from '@/mixins/bufferToBase64'
-import { create } from 'domain'
+import roomIdGeneration from '@/mixins/roomIdGeneration'
+import { mapState } from 'vuex'
 export default {
-  mixins: [bufferToBase64],
+  mixins: [bufferToBase64, roomIdGeneration],
   props: {
     user: {
       type: Object,
@@ -49,10 +50,10 @@ export default {
       ifSubscribe: false, 
     }
   },
-  async created() {
-    this.ifSubscribe = await this.$subscribeService.check(this.user.id)
-  },
   computed: {
+    ...mapState({
+      userId: state => state.user.id
+    }),
     setHeaderImage() {
       if (this.user.headerImage) {
         return {
@@ -70,6 +71,9 @@ export default {
       }
     }
   },
+  async created() {
+    this.ifSubscribe = await this.$subscribeService.check(this.user.id)
+  },
   methods: {
     async handlerSubscribe() {
       await this.$subscribeService.subscribe(this.user.id)
@@ -79,7 +83,9 @@ export default {
       await this.$subscribeService.unsubscribe(this.user.id)
       this.ifSubscribe = false
     },
-    handlerMessages() {}
+    handlerMessages() {
+      this.$router.push(`/messages/new/${this.roomIdGeneration(this.userId, this.user.id)}`)
+    }
   }
 }
 </script>

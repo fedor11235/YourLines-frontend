@@ -2,7 +2,7 @@
 .messages
     user-toolbar
     messages-new
-    messages-write
+    messages-write(:roomId="$route.params.roomId")
     //- messages-search
     modal-help
 </template>
@@ -16,7 +16,10 @@ export default {
     ...mapState({
         page: state => state.page
     })
-    }
+  },
+  created() {
+    console.log(this.$route.params)
+  }
 }
 </script>
 

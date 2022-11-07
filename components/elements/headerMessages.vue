@@ -5,7 +5,7 @@
         input.messages-input(v-if="modeSearch" v-model="searchUser" :placeholder="$t('MESSAGES.HEADER_PLACEHOLDER')")
         .messages-search(@click="modeSearch=true")
         .messages-cansel(v-if="modeSearch" @click="modeSearch=false")
-        .messages-add(v-if="!modeSearch" @click="$router.push('/messages/new')")
+        .messages-add(v-if="!modeSearch")
     hr.messages-separate
 </template>
 <script>

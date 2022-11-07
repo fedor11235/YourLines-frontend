@@ -3,40 +3,69 @@
   header-feed.test(title="Написать сообщение")
   .write-container
     .write-body.scroll
-      message(v-for="(message, index) in messages" :key="index" :type="message.type" :text="message.text")
+      message(v-for="(message, index) in messages" :key="index" :nicknameProp="message.nickname" :text="message.text")
     .write-input
       input(v-model="messageNew")
       .write-submit(@click="hendlerSendMessage") Отправить
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
+  props: {
+    roomId: {
+      type: String,
+      required: true
+    },
+    // userAnother: {
+    //   type: Object,
+    //   required: true
+    // }
+  },
   data() {
     return {
+      socket: null,
       messageNew: '',
       messages: []
     }
   },
-  mounted() {
-    this.socket = this.$nuxtSocket({
-      channel: '/chat'
+  computed: {
+    ...mapState({
+      nickname: state => state.user.nickname,
+      userId: state => state.user.id
     })
-    this.socket
-    .on('get-messages', this.handlerResponse)
+  },
+  mounted() {
+    if(!this.socket) {
+        this.socket = this.$nuxtSocket({
+        channel: '/chat',
+        query: {
+          nickname: this.nickname,
+          roomId: this.roomId,
+        }
+      })
+      this.socket
+      .on("log", (log) => console.log(log))
+      .on("messages", this.handlerResponseAllMessages)
+      .emit("messages:get")
+    }
   },
   methods: {
     hendlerSendMessage() {
-      console.log('send socket')
-      this.socket.emit('create-message', {
-        text: this.messageNew
-      })
-      this.messages.push({
-        type: 'you',
-        text: this.messageNew
+      this.socket.emit('message:post', {
+        userId: this.userId,
+        nickname: this.nickname,
+        text: this.messageNew,
+        roomId: this.roomId
       })
       this.messageNew = ''
     },
-    handlerResponse(msg, cb) {
-      this.messages = msg
+    handlerResponseAllMessages(msg, cb) {
+      console.log(msg)
+      if(Array.isArray(msg)) {
+        this.messages.push(...msg)
+      } else {
+        this.messages.push(msg)
+      }
     },
   }
 }
@@ -53,6 +82,7 @@ export default {
   background-color: #fdfdfd;
   .write-body {
     position: absolute;
+    width: 100%;
     top: 56px;
     padding: 8px;
     max-height: calc(100% - 198px);

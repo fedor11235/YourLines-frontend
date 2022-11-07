@@ -1,7 +1,7 @@
 <template lang="pug">
 .messages-choises 
-    .choises-header {{$t('MESSAGES.CHOISES_HEADER')}}
-    .choises-button(@click="$router.push('/messages/new')") {{$t('MESSAGES.NEW_MESSAGE')}}
+  .choises-header {{$t('MESSAGES.CHOISES_HEADER')}}
+  .choises-button(@click="") {{$t('MESSAGES.NEW_MESSAGE')}}
 </template>
 <script>
 export default {
