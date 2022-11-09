@@ -4,6 +4,7 @@ import userService from '../services/userService'
 import bookmarksService from '../services/bookmarksService'
 import subscribeService from '../services/subscribeService'
 import messagesService from '../services/messagesService'
+import commentService from '../services/commentService'
 
 export default (ctx, inject) => {
   inject('authService', authService(ctx))
@@ -12,4 +13,5 @@ export default (ctx, inject) => {
   inject('bookmarksService', bookmarksService(ctx))
   inject('subscribeService', subscribeService(ctx))
   inject('messagesService', messagesService(ctx))
+  inject('commentService', commentService(ctx))
 }

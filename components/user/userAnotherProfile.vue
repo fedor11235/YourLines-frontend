@@ -27,6 +27,8 @@
         :date="post.createdAt"
         :idPost="post.id"
         :idUser="user.id"
+        :likes="post.likes"
+        :comments="post.comment"
       )
 </template>
 <script>

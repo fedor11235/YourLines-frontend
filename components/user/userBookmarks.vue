@@ -13,6 +13,8 @@
           :date="bookmark.post.createdAt"
           :idPost="bookmark.post.id"
           :idUser="bookmark.user.id"
+          :likes="bookmark.post.likes"
+          :comments="bookmark.post.comment"
         )
 </template>
 <script>

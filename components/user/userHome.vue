@@ -28,6 +28,8 @@
           :date="post.createdAt"
           :idPost="post.id"
           :idUser="post.user.id"
+          :likes="post.likes"
+          :comments="post.comment"
         )
 </template>
 <script>
@@ -43,6 +45,7 @@ export default {
   async mounted() {
     const respons = await this.$postsService.postsGetAll()
     this.posts = respons.posts
+    console.log(respons.posts)
   },
   methods: {
     handlerInput(e) {

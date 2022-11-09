@@ -16,6 +16,7 @@ import popover from '@/components/elements/popover'
 import suggestions from '@/components/elements/suggestions'
 import message from '@/components/elements/message'
 import dialogItem from '@/components/elements/dialogItem'
+import notification from '@/components/elements/notification'
 
 import loginCover from '@/components/login/loginCover'
 import loginForm from '@/components/login/loginForm'
@@ -70,6 +71,7 @@ export default () => {
   Vue.component('suggestions', suggestions)
   Vue.component('message', message)
   Vue.component('dialog-item', dialogItem)
+  Vue.component('notification', notification)
 
   Vue.component('creator-info', creatorInfo)
   Vue.component('creator-notification', creatorNotification)

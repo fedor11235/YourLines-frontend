@@ -50,7 +50,16 @@ export default ctx => ({
         } catch (e) {
           console.error('posts info unavailable', e)
         }
+      },
+    async postLike(idPost) {
+      let response
+      try {
+        await ctx.$postsApi.postLike(idPost)
+        return response
+      } catch (e) {
+        console.error('posts info unavailable', e)
       }
+    },
   })
   
   
