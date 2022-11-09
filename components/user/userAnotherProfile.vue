@@ -32,7 +32,7 @@
 <script>
 import bufferToBase64 from '@/mixins/bufferToBase64'
 import roomIdGeneration from '@/mixins/roomIdGeneration'
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   mixins: [bufferToBase64, roomIdGeneration],
   props: {
@@ -75,6 +75,9 @@ export default {
     this.ifSubscribe = await this.$subscribeService.check(this.user.id)
   },
   methods: {
+    ...mapMutations({
+      userTransitionSave: 'USER_TRANSITION_SAVE'
+    }),
     async handlerSubscribe() {
       await this.$subscribeService.subscribe(this.user.id)
       this.ifSubscribe = true
@@ -84,6 +87,7 @@ export default {
       this.ifSubscribe = false
     },
     handlerMessages() {
+      this.userTransitionSave(this.user.id)
       this.$router.push(`/messages/new/${this.roomIdGeneration(this.userId, this.user.id)}`)
     }
   }

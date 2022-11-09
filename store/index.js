@@ -31,6 +31,23 @@ export const state = () => ({
         money: 0,
         approved: false
     },
+    userTransition: {
+      id: '',
+      headerImage: '',
+      avatar: '',
+      email: '',
+      nickname: '',
+      description: '',
+      link: '',
+      wishList: '',
+      location: '',
+      websiteURL: '',
+      idCards: false,
+      paymentHistory: [],
+      money: 0,
+      approved: false
+    },
+    userTransitionId: '',
     token: '',
     language: '',
     posts: []
@@ -60,6 +77,14 @@ export const mutations = {
 
     ADD_TOKEN(state, token) {
         state.token = token
+    },
+
+    // Operations with users
+    USER_TRANSITION_SAVE(state, userId) {
+      state.userTransitionId = userId
+      // for (const property in user) {
+      //     state.user[property] = user[property]
+      // }
     },
 
     // Operations with users

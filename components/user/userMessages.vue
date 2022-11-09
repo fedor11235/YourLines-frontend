@@ -2,36 +2,35 @@
 .user-messages
   header-messages
   .messages-body
-    .messages-item
-      .messages-avatar
-      .messages-info
-        .messages-nickname {{user.nickname}}
-        .messages-last-messages {{user.lastMessages}}
-      .messages-date {{user.date}}
-    .messages-item
-      .messages-avatar
-      .messages-info
-        .messages-nickname {{user.nickname}}
-        .messages-last-messages {{user.lastMessages}}
-      .messages-date {{user.date}}
-    .messages-item
-      .messages-avatar
-      .messages-info
-        .messages-nickname {{user.nickname}}
-        .messages-last-messages {{user.lastMessages}}
-      .messages-date {{user.date}}
+    dialog-item(
+      v-for="(dialog, index) in dialogs" 
+      :key="index" 
+      :user="dialog.userDialog" 
+      :lastMessages="dialog.text"
+      @click="handlerClickDualog(dialog.roomId)"
+      )
 </template>
 <script>
+// import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      user: {
-        nickname: 'test-user',
-        lastMessages: 'Привет я тут чилю подписывайся там копец',
-        date: 'apr 23, 2021'
-      }
+      dialogs: []
     }
-  }
+  },
+  // computed: {
+  //   ...mapState({
+  //     userTransitionId: state => state.userTransition.id
+  //   })
+  // },
+  async created() {
+    this.dialogs = await this.$messagesService.getMessages()
+  },
+  methods: {
+    handlerClickDualog(roomId) {
+      this.$router.push(`/messages/new/${roomId}`)
+    }
+  } 
 }
 </script>
 <style lang="scss" scoped>

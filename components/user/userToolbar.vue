@@ -57,7 +57,7 @@ export default {
   methods: {
     handlerExit() {
       this.$authService.userLogout()
-      this.$router.push('login')
+      this.$router.push('/login')
     },
     handlerRefresh() {
       this.$authService.userRefreshToken()

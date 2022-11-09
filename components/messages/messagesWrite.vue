@@ -15,11 +15,7 @@ export default {
     roomId: {
       type: String,
       required: true
-    },
-    // userAnother: {
-    //   type: Object,
-    //   required: true
-    // }
+    }
   },
   data() {
     return {
@@ -31,7 +27,8 @@ export default {
   computed: {
     ...mapState({
       nickname: state => state.user.nickname,
-      userId: state => state.user.id
+      userId: state => state.user.id,
+      userTransitionId: state => state.userTransitionId
     })
   },
   mounted() {
@@ -40,7 +37,7 @@ export default {
         channel: '/chat',
         query: {
           nickname: this.nickname,
-          roomId: this.roomId,
+          roomId: this.roomId
         }
       })
       this.socket
@@ -49,18 +46,20 @@ export default {
       .emit("messages:get")
     }
   },
+  destroyed() {
+    this.socket = null
+  },
   methods: {
     hendlerSendMessage() {
       this.socket.emit('message:post', {
-        userId: this.userId,
+        userId: this.userTransitionId,
         nickname: this.nickname,
         text: this.messageNew,
-        roomId: this.roomId
+        roomId: this.roomId,
       })
       this.messageNew = ''
     },
     handlerResponseAllMessages(msg, cb) {
-      console.log(msg)
       if(Array.isArray(msg)) {
         this.messages.push(...msg)
       } else {

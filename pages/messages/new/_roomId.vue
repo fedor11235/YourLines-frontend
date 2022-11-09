@@ -1,7 +1,7 @@
 <template lang="pug">
 .messages
     user-toolbar
-    messages-new
+    user-messages
     messages-write(:roomId="$route.params.roomId")
     //- messages-search
     modal-help
@@ -18,7 +18,6 @@ export default {
     })
   },
   created() {
-    console.log(this.$route.params)
   }
 }
 </script>
