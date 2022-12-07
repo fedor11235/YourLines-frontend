@@ -41,7 +41,9 @@ export default {
     '~plugins/libraries',
     '~plugins/router',
     '~plugins/components',
-    '~plugins/settings'
+    '~plugins/settings',
+    '~plugins/bus',
+    // { src: '~plugins/notifications', ssr: false },
   ],
 
   buildModules: [

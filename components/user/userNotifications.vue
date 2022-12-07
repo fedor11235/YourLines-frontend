@@ -24,6 +24,9 @@ export default {
         }
       ]
     }
+  },
+  async mounted() {
+    await this.$notificationsService.viewed()
   }
 }
 </script>

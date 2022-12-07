@@ -2,6 +2,7 @@ export default ctx => ({
   async userGet() {
     try {
       const user = await ctx.$userApi.userGet()
+      // console.log(user, 'user!!!!!!!!!!!!!!!!!!!!!!1')
       ctx.store.commit('USER_SAVE_DATA', user)
       window.localStorage.setItem('userId', user.id)
       return user
